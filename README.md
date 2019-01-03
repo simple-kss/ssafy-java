@@ -1,2 +1,2 @@
 # ssafy-java
-ssafy 자바
+src폴더에 소스가 있습니다.
