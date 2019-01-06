@@ -26,25 +26,25 @@ public class solution21 {
 	}
 	
 	// cnt만큼 dir방향으로 점프하기
-	static boolean jump(int num, Animal an, int cnt) {
+	static int jump(int num, Animal an, int cnt) {
 		
 		int jR = an.r + d[an.dir][0] * cnt;
 		int jC = an.c + d[an.dir][1] * cnt;
 		// 범위 밖이어도 false
 		if(!isValid(jR,jC)) {
 			// 밖이면 이동하지 않는다.
-			return true;
+			return 0; // 유효하지 않다면 0
 		}
 		// 뛰는 자리에 있다면 false
 		if(map[jR][jC] == 1) {
-			return false;
+			return 1;
 		}
 		// 그게아니라면 점프!
 		else {
 			an.r = jR;
 			an.c = jC;
 			map[jR][jC] = 1;
-			return true;
+			return 2;
 		}
 	}
 
@@ -94,23 +94,27 @@ xx:			for (int i = 0; i < num; i++) {
 				// 3번 뛴다 3,2,1칸씩
 				for (int j = 3; j >= 1; j--) {
 					
-					boolean check = jump(i+1, animal[i], j);
+					int check = jump(i+1, animal[i], j);
 					
 					//		--------------------
-							for(int zi = 0; zi < N; zi++) {
-								for(int zj = 0; zj < N; zj++) {
-									System.out.printf("%d ", map[zi][zj]);
-								}
-								System.out.println("");
-							}
-							System.out.println("");
+//							for(int zi = 0; zi < N; zi++) {
+//								for(int zj = 0; zj < N; zj++) {
+//									System.out.printf("%d ", map[zi][zj]);
+//								}
+//								System.out.println("");
+//							}
+//							System.out.println("");
 					//		-------------------
 
-					// 같은 자리에 뛰었다면
-					if(!check) {
+					// 뛰는 자리라면
+					if(check == 1) {
 						System.out.printf("#%d %d\n",t+1,i+1);
 						break xx;
-					}				
+					}	
+					// 뛰는 자리가 유효하지 않다면
+					else if(check == 0) {
+						break; // 더이상 뛰지 않는다.
+					}
 				}
 				
 				if( i == num - 1)
