@@ -80,14 +80,20 @@ public class Manager extends Employee{
 		m.setSalary(30);
 		System.out.println(m.getBonus());
 		
-		Manager[] list = new Manager[2];
+		Employee[] list = new Employee[3];
+		Employee e = new Employee(456, "ellen", 3000);
+		
+		list[0] = m;
+		list[1] = new Manager(147, "potter", 6000, 200);
+		list[2] = e;
+		
 
 		for (int i = 0; i < list.length; i++) {
 			list[i] = new Manager(123,"321",1*(i+1),1);
 		}
 		
-		for (Manager manager : list) {
-			System.out.println(manager.getBonus());
+		for (Employee x : list) {
+			//System.out.println(x.printName());
 			
 		}
 		
