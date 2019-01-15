@@ -1,5 +1,6 @@
 package com.ssafy;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ProductTest {
@@ -8,7 +9,8 @@ public class ProductTest {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		
-		IProductMgr pm = new IProductMgr();
+		IProductManagerImpl pm = new IProductManagerImpl();
+		
 		// 상품번호, 이름, 가격, 수량, 인치, 타입
 		pm.add( new Tv("120","샘숭티비",20000,100,53,"플라즈마"));
 		pm.add( new Tv("121","엘지티비",30000,90,60,"LCD"));
@@ -39,55 +41,58 @@ public class ProductTest {
 			scan.nextLine();
 			String str; // 입력받는 문자열
 			int input;
-			Product[] temp; // 정보를 저장하는  Product배열
+			
+			ArrayList<Product> temp; // 정보를 저장하는  Product배열
+			ArrayList<Refrigerator> tempR;
+			ArrayList<Tv> tempT;
 			
 			switch(select) {
 			case 1: // 1. 상품정보 전체를 검색
 				temp = pm.search();
-				for(int i = 0; i < pm.getSize() ; i++) {
-					System.out.println(temp[i].toString());					
+				for(int i = 0; i < temp.size() ; i++) {
+					System.out.println(temp.get(i).toString());					
 				}
 				break;
 			case 2: // 2. 상품번호로 상품을 검색
 				System.out.print("상품번호를 입력하세요 : ");
 				str = scan.next();
 				temp = pm.search(str);
-				for(int i = 0; temp[i] != null; i++) {
-					System.out.println(temp[i].toString());					
+				for(int i = 0; i < temp.size() ; i++) {
+					System.out.println(temp.get(i).toString());					
 				}
 				break;
 			case 3: // 3. 상품명으로 상품을 검색하는 기능
 				System.out.print("Title을 입력하세요 : ");
 				str = scan.next();
 				temp = pm.searchName(str);
-				for(int i = 0; temp[i] != null; i++) {
-					System.out.println(temp[i].toString());					
+				for(int i = 0; i < temp.size() ; i++) {
+					System.out.println(temp.get(i).toString());					
 				}
 				break;
 			case 4: // 4. Tv정보만 검색
 				temp = pm.searchTv();
-				for(int i = 0; temp[i] != null; i++) {
-					System.out.println(temp[i].toString());					
+				for(int i = 0; i < temp.size(); i++) {
+					System.out.println(temp.get(i).toString());					
 				}
 				break;
 			case 5: // 5. Refrigerator만 검색하는 기능
 				temp = pm.searchRefrigerator();
-				for(int i = 0; temp[i] != null; i++) {
-					System.out.println(temp[i].toString());					
+				for(int i = 0; i < temp.size(); i++) {
+					System.out.println(temp.get(i).toString());					
 				}
 				break;
 				
 			case 6: // 6. 400L이상의 Refrigerator 검색
-				temp = pm.search400L();
-				for(int i = 0; temp[i] != null; i++) {
-					System.out.println(temp[i].toString());					
+				tempR = pm.search400L();
+				for(int i = 0; i < tempR.size(); i++) {
+					System.out.println( tempR.get(i).toString());					
 				}
 				break;
 				
 			case 7: // 7. 50inch 이상의 Tv 검색
-				temp = pm.search50inch();
-				for(int i = 0; temp[i] != null; i++) {
-					System.out.println(temp[i].toString());					
+				tempT = pm.search50inch();
+				for(int i = 0; i < tempT.size(); i++) {
+					System.out.println( tempT.get(i).toString());					
 				}
 				break;
 			
