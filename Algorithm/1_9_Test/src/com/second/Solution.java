@@ -11,6 +11,14 @@ import java.util.Scanner;
 //500 1000
 //400 400
 
+abstract class Test {
+	
+}
+
+class Subtest extends Test {
+	
+}
+
 
 class Ele {
 	int v;
@@ -21,6 +29,9 @@ public class Solution {
 	static int[][] dp = new int[21][10001];
 	public static void main(String args[]) throws Exception
 	{
+		
+//		Test t = new Subtest();
+//		Test t = new Test();
 		/*
 		   아래의 메소드 호출은 앞으로 표준 입력(키보드) 대신 input.txt 파일로부터 읽어오겠다는 의미의 코드입니다.
 		   여러분이 작성한 코드를 테스트 할 때, 편의를 위해서 input.txt에 입력을 저장한 후,

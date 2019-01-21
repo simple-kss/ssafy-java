@@ -2,7 +2,7 @@ package com.ssafy;
 
 import java.util.ArrayList;
 
-public class IProductManagerImpl {
+public class IProductManagerImpl implements IProductMgr{
 	private ArrayList<Product> bm = new ArrayList<>();
 	
 	// 0. 데이터 입력 기능
@@ -114,6 +114,18 @@ public class IProductManagerImpl {
 	
 	public int getSize() {
 		return bm.size();
+	}
+
+	@Override
+	public void open() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void close() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

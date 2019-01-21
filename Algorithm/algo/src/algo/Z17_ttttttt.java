@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Queue;
+import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -100,9 +101,12 @@ public class Z17_ttttttt {
 		
 		for (Pest Pest : hs) {
 			System.out.println(Pest.toString());
-		}
+		}		
+		
 		// 중복이 제거가 안된다.
 		// HashCode와 equals를 정의하면 중복이 제거됨 (같은 객체는 제거됨)
+		
+		System.out.println("---------------------");
 		
 		HashMap<Pest, Integer> hm = new HashMap(); // 키:값
 		hm.put(new Pest(22,"류현진"), 100);
