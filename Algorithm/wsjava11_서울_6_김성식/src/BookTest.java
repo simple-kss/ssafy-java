@@ -22,6 +22,7 @@ public class BookTest {
 			System.out.println("3. 도서 판매");
 			System.out.println("4. 도서 구매");
 			System.out.println("5. 총 재고 금액 구하기");
+			System.out.println("6. 서버로 데이터 전송");
 			System.out.println("9. 종료");
 			System.out.print("원하는 번호를 선택하세요. ");
 			int select = scan.nextInt();
@@ -102,7 +103,12 @@ public class BookTest {
 				System.out.println( "총 재고 금액 : " + 
 						bm.getTotalAmount());
 
-				break;				
+				break;
+			case 6:
+				//send()보내기
+				bm.send();
+				System.out.println("전송완료!");
+				break;
 			case 9: // 0 종료
 				bm.close();
 				System.out.println("종료 ! ");

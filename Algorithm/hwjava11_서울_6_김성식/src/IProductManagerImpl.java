@@ -1,37 +1,97 @@
 
 
+import java.io.DataOutputStream;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.net.Socket;
 import java.util.ArrayList;
+
 
 public class IProductManagerImpl implements IProductMgr {
 	private ArrayList<Product> bm = new ArrayList<>();
 	
 	
+	//ë‚´ë¶€ í´ë˜ìŠ¤ : serverë¡œ Book ì •ë³´ ì „ì†¡
+	class ProductClient extends Thread {
+		public void run() { // threadê°€ ì‘ì—…í•  ë‚´ìš©ì´ ìˆëŠ” ë©”ì†Œë“œ-> serverë¡œ Book ì •ë³´ ì „ì†¡
+			// Socket ìƒì„±
+			// Stream ìƒì„±(Filter í¬í•¨: oo) oosë¡œ ë³´ë‚´ì•¼ í•¨
+			// 
+			
+	        Socket s1;
+	        InputStream slin;
+	        ObjectInputStream ois;
+	        OutputStream slout;
+	        ObjectOutputStream oos;
+	        DataOutputStream dos;
+	       
+	        try {
+				s1 = new Socket("localhost", 5433);
+				//slin = s1.getInputStream();
+				//ois = new ObjectInputStream(slin);
+				slout = s1.getOutputStream(); // ì¶œë ¥ìš© ìŠ¤íŠ¸ë¦¼
+				oos = new ObjectOutputStream(slout); // filter
+				dos = new DataOutputStream(slout);
+				
+				
+				ArrayList<Product> rArr = IProductManagerImpl.this.searchRefrigerator();
+				ArrayList<Product> tArr = IProductManagerImpl.this.searchTv();
+				ArrayList<Product> pm = new ArrayList<Product>();
+				
+				for (Product product : tArr) {
+					pm.add(product);
+				}
+				for (Product product : rArr) {
+					pm.add(product);					
+				}
+				
+				dos.writeInt(pm.size());
+				for (Product p : pm) {
+					oos.writeObject(p);
+				}
+				
+				//ois.close();
+				//slin.close();
+				oos.close();
+				slout.close();
+				s1.close();
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
+		}		
+	}
+	
+	
 	
 	public IProductManagerImpl() {
-		// Ã³À½¿¡ »ı¼ºÇÒ ¶§ ÃÊ±â µ¥ÀÌÅÍ °ª ³Ö´Â´Ù.
+		// ì²˜ìŒì— ìƒì„±í•  ë•Œ ì´ˆê¸° ë°ì´í„° ê°’ ë„£ëŠ”ë‹¤.
 		try {
 			FileInputStream fis = new FileInputStream("product.dat");
 
 		} catch (FileNotFoundException e) {
 			try {
-				// »óÇ°¹øÈ£, ÀÌ¸§, °¡°İ, ¼ö·®, ÀÎÄ¡, Å¸ÀÔ
+
 				
-				this.add( new Tv("120","»ù¼şÆ¼ºñ",20000,100,53,"ÇÃ¶óÁî¸¶"));
-				this.add( new Tv("121","¿¤ÁöÆ¼ºñ",30000,90,60,"LCD"));
-				this.add( new Tv("122","LEÆ¼ºñ",40000,80,24,"LdD"));
-				this.add( new Tv("123","SSÆ¼ºñ",13000,70,14,"L3D"));
-				// »óÇ°¹øÈ£, ÀÌ¸§, °¡°İ, ¼ö·®, ¿ë·®
-				this.add( new Refrigerator("233","LG½Ã±×´ÏÃ³",20000,150,500));
-				this.add( new Refrigerator("212","AB½Ã±×´ÏÃ³",50000,160,600));
-				this.add( new Refrigerator("200","EE½Ã±×´ÏÃ³",60000,170,300));
-				this.add( new Refrigerator("245","RR½Ã±×´ÏÃ³",70000,180,350));
+				// ìƒí’ˆë²ˆí˜¸, ì´ë¦„, ê°€ê²©, ìˆ˜ëŸ‰, ì¸ì¹˜, íƒ€ì…
+				this.add( new Tv("120","ìƒ˜ìˆ­í‹°ë¹„",20000,100,53,"í”Œë¼ì¦ˆë§ˆ"));
+				this.add( new Tv("121","ì—˜ì§€í‹°ë¹„",30000,90,60,"LCD"));
+				this.add( new Tv("122","LEí‹°ë¹„",40000,80,24,"LdD"));
+				this.add( new Tv("123","SSí‹°ë¹„",13000,70,14,"L3D"));		
 				
+				// ìƒí’ˆë²ˆí˜¸, ì´ë¦„, ê°€ê²©, ìˆ˜ëŸ‰, ìš©ëŸ‰
+				this.add( new Refrigerator("233","LGì‹œê·¸ë‹ˆì²˜",20000,150,500));
+				this.add( new Refrigerator("212","ABì‹œê·¸ë‹ˆì²˜",50000,160,600));
+				this.add( new Refrigerator("200","EEì‹œê·¸ë‹ˆì²˜",60000,170,300));
+				this.add( new Refrigerator("245","RRì‹œê·¸ë‹ˆì²˜",70000,180,350));
 			} catch (DuplicateException e1) {
 				e1.printStackTrace();
 			}
@@ -42,7 +102,7 @@ public class IProductManagerImpl implements IProductMgr {
 		open();
 	}
 
-	// 0. µ¥ÀÌÅÍ ÀÔ·Â ±â´É
+	// 0. ë°ì´í„° ì…ë ¥ ê¸°ëŠ¥
 	public void add(Product p) throws DuplicateException {
 		for (Product product : bm) {
 			if(product.getNum().equals(p.getNum())) {
@@ -52,12 +112,12 @@ public class IProductManagerImpl implements IProductMgr {
 		bm.add(p);		
 	}
 	
-	// 1. µ¥ÀÌÅÍ ÀúÃ¼ °Ë»ö ±â´É
+	// 1. ë°ì´í„° ì €ì²´ ê²€ìƒ‰ ê¸°ëŠ¥
 	public ArrayList<Product> search() {
 		return bm;
 	}
 	
-	// 2. Isbn ¹øÈ£·Î »óÇ°À» °Ë»ö
+	// 2. Isbn ë²ˆí˜¸ë¡œ ìƒí’ˆì„ ê²€ìƒ‰
 	public ArrayList<Product> search(String num) throws CodeNotFoundException {
 		ArrayList<Product> temp = new ArrayList<>();
 		for (int i = 0; i < bm.size(); i++) {
@@ -69,7 +129,7 @@ public class IProductManagerImpl implements IProductMgr {
 		return temp;
 	}
 	
-	// 3. »óÇ°¸íÀ¸·Î »óÇ°À» °Ë»öÇÏ´Â ±â´É
+	// 3. ìƒí’ˆëª…ìœ¼ë¡œ ìƒí’ˆì„ ê²€ìƒ‰í•˜ëŠ” ê¸°ëŠ¥
 	public ArrayList<Product> searchName(String name) {
 		ArrayList<Product> temp = new ArrayList<>();
 		for (int i = 0; i < bm.size(); i++) {
@@ -79,7 +139,7 @@ public class IProductManagerImpl implements IProductMgr {
 		return temp;		
 	}
 	
-	// 4. Tv¸¸ °Ë»öÇÏ´Â ±â´É
+	// 4. Tvë§Œ ê²€ìƒ‰í•˜ëŠ” ê¸°ëŠ¥
 	public ArrayList<Product> searchTv() {
 		ArrayList<Product> temp = new ArrayList<>();
 		for (int i = 0; i < bm.size(); i++) {
@@ -90,7 +150,7 @@ public class IProductManagerImpl implements IProductMgr {
 		return temp;
 	}
 	
-	// 5. Refrigerator¸¸ °Ë»öÇÏ´Â ±â´É
+	// 5. Refrigeratorë§Œ ê²€ìƒ‰í•˜ëŠ” ê¸°ëŠ¥
 	public ArrayList<Product> searchRefrigerator() {
 		ArrayList<Product> temp = new ArrayList<>();
 		for (int i = 0; i < bm.size(); i++) {
@@ -101,7 +161,7 @@ public class IProductManagerImpl implements IProductMgr {
 		return temp;
 	}
 	
-	// 6. 400LÀÌ»óÀÇ Refrigerator °Ë»ö
+	// 6. 400Lì´ìƒì˜ Refrigerator ê²€ìƒ‰
 	public ArrayList<Refrigerator> search400L() throws ProductNotFoundException {
 		ArrayList<Refrigerator> temp = new ArrayList<>();
 		for (int i = 0; i < bm.size(); i++) {
@@ -116,7 +176,7 @@ public class IProductManagerImpl implements IProductMgr {
 		return temp;
 	}
 	
-	// 7. 50inchÀÌ»óÀÇ TV °Ë»ö
+	// 7. 50inchì´ìƒì˜ TV ê²€ìƒ‰
 	public ArrayList<Tv> search50inch() throws ProductNotFoundException {
 		ArrayList<Tv> temp = new ArrayList<>();
 		for (int i = 0; i < bm.size(); i++) {
@@ -131,17 +191,17 @@ public class IProductManagerImpl implements IProductMgr {
 		return temp;
 	}
 	
-	// 8. »óÇ°¹øÈ£¿Í °¡°İÀ» ÀÔ·Â ¹Ş¾Æ »óÇ° °¡°İÀ» º¯°æÇÒ ¼ö ÀÖ´Â ±â´É
+	// 8. ìƒí’ˆë²ˆí˜¸ì™€ ê°€ê²©ì„ ì…ë ¥ ë°›ì•„ ìƒí’ˆ ê°€ê²©ì„ ë³€ê²½í•  ìˆ˜ ìˆëŠ” ê¸°ëŠ¥
 	public void updatePrice(String num, int price) {
 		for (int i = 0; i < bm.size(); i++) {
 			if(bm.get(i).getNum().equals(num)) {
 				bm.get(i).setPrice(price);
-				System.out.println("¾÷µ¥ÀÌÆ® ¿Ï·á!");
+				System.out.println("ì—…ë°ì´íŠ¸ ì™„ë£Œ!");
 			}
 		}
 	}
 	
-	// 9. »óÇ°¹øÈ£·Î »óÇ°À» »èÁ¦ÇÏ´Â ±â´É
+	// 9. ìƒí’ˆë²ˆí˜¸ë¡œ ìƒí’ˆì„ ì‚­ì œí•˜ëŠ” ê¸°ëŠ¥
 	public void delete(String num) {
 		for (int i = 0; i < bm.size(); i++) {
 			if(bm.get(i).getNum().equals(num)) {
@@ -150,7 +210,7 @@ public class IProductManagerImpl implements IProductMgr {
 		}
 	}
 	
-	// 10. ÀüÃ¼ Àç°í »óÇ° ±İ¾×À» ±¸ÇÏ´Â ±â´É
+	// 10. ì „ì²´ ì¬ê³  ìƒí’ˆ ê¸ˆì•¡ì„ êµ¬í•˜ëŠ” ê¸°ëŠ¥
 	public double total() {
 		int total = 0;
 		for (int i = 0; i < bm.size(); i++) {
@@ -165,7 +225,7 @@ public class IProductManagerImpl implements IProductMgr {
 
 	@Override
 	public void close() {
-		// °´Ã¼ ÀúÀå
+		// ê°ì²´ ì €ì¥
 		try {
 			FileOutputStream fos = new FileOutputStream("product.dat");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -188,8 +248,8 @@ public class IProductManagerImpl implements IProductMgr {
 			
 			for(Product b; ( b = (Product)ois.readObject() ) != null; ) {
 				bm.add(b);
-				// fis·Î ÀĞ¾î³½ ÄÚµå°ª = fis.read()
-				// fosÀÇ write¶ó´Â ¸Ş¼Òµå´Â ±× ÄÚµå¿¡ ÇØ´çÇÏ´Â '±ÛÀÚ'¸¦  ´ë½ÅÇÏ¿© Ãâ·Â
+				// fisë¡œ ì½ì–´ë‚¸ ì½”ë“œê°’ = fis.read()
+				// fosì˜ writeë¼ëŠ” ë©”ì†Œë“œëŠ” ê·¸ ì½”ë“œì— í•´ë‹¹í•˜ëŠ” 'ê¸€ì'ë¥¼  ëŒ€ì‹ í•˜ì—¬ ì¶œë ¥
 			}	
 			
 		} catch (EOFException e) {
@@ -197,13 +257,15 @@ public class IProductManagerImpl implements IProductMgr {
 		}
 		catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("ÀĞ¾îµé¿©¿Ã ÆÄÀÏÀÌ ¾ø½À´Ï´Ù.!");
+			System.out.println("ì½ì–´ë“¤ì—¬ì˜¬ íŒŒì¼ì´ ì—†ìŠµë‹ˆë‹¤.!");
 			e.printStackTrace();
-		}
+		}		
 	}
 	
 	public void send() {
-		
+		ProductClient client = new ProductClient();
+		client.start();
+		System.out.println("ì „ì†¡ì™„ë£Œ!");
 	}
 
 }

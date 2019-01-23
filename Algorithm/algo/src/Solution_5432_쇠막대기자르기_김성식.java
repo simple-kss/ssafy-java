@@ -1,22 +1,22 @@
 import java.util.Scanner;
 
-public class Solution_5432_¼è¸·´ë±âÀÚ¸£±â_±è¼º½Ä {
+public class Solution_5432_ì‡ ë§‰ëŒ€ê¸°ìë¥´ê¸°_ê¹€ì„±ì‹ {
 
 	public static void main(String[] args) {
-		// ÀÔ·ÂºÎ
+		// ï¿½Ô·Âºï¿½
 		Scanner scan = new Scanner(System.in); 
 		int test_case = scan.nextInt();
 		
 		for(int t = 1; t <= test_case; t++) {
 			String inStr = scan.next();
 			
-			// ()¸¦ ·¹ÀÌÀú·Î ¹Ù²ÙÀå
+			// ()ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½ï¿½
 			inStr = inStr.replace("()","R");
 			
-			// ÀÚ ÀÌÁ¦ µ¹¸é¼­
-	//		'C'¸¦ ¸¸³ª¸é C¸¦ ¼¼´Â Ccnt++
-	//		')'¸¦ ¸¸³ª¸é sum++ÈÄ Ccnt--
-	//		R¸¸³ª¸é sum += Ccnt
+			// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½é¼­
+	//		'C'ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Cï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ccnt++
+	//		')'ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ sum++ï¿½ï¿½ Ccnt--
+	//		Rï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ sum += Ccnt
 			
 			int len = inStr.length();
 			int Ccnt = 0;

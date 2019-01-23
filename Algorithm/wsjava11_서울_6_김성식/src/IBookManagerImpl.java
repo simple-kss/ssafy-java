@@ -1,18 +1,66 @@
 
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.net.Socket;
 import java.util.ArrayList;
 
 
 public class IBookManagerImpl implements IBookMgr {
-	private ArrayList<Book> bm = new ArrayList<>();
 	
+	//내부 클래스 : server로 Book 정보 전송
+	class BookClient extends Thread {
+		public void run() { // thread가 작업할 내용이 있는 메소드-> server로 Book 정보 전송
+			// Socket 생성
+			// Stream 생성(Filter 포함: oo) oos로 보내야 함
+			// 
+			
+	        Socket s1;
+	        InputStream slin;
+	        ObjectInputStream ois;
+	        OutputStream slout;
+	        ObjectOutputStream oos;
+	        DataOutputStream dos;
+	       
+	        try {
+				s1 = new Socket("localhost", 5432);
+				//slin = s1.getInputStream();
+				//ois = new ObjectInputStream(slin);
+				slout = s1.getOutputStream(); // 출력용 스트림
+				oos = new ObjectOutputStream(slout); // filter
+				dos = new DataOutputStream(slout);
+				
+				
+				System.out.println("전체 다 쏴줌");
+				
+				dos.writeInt(bm.size());
+				for ( Book b : bm) {
+					oos.writeObject(b);
+				}
+				
+				//ois.close();
+				//slin.close();
+				oos.close();
+				slout.close();
+				s1.close();
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
+		}		
+	}	
+	
+	private ArrayList<Book> bm = new ArrayList<>();	
 	
 	
 	public IBookManagerImpl() {
@@ -63,8 +111,7 @@ public class IBookManagerImpl implements IBookMgr {
 		}
 		// 반복문을 모두 통과했다는 것은
 		// 검색한 Isbn이 존재하지 않았다는 이야기
-		throw new ISBNNotFoundException();
-		
+		throw new ISBNNotFoundException();		
 	}
 
 	// 4. 도서가 구매되어 재고 수량을 더하는 기능
@@ -124,6 +171,10 @@ public class IBookManagerImpl implements IBookMgr {
 		try {
 			FileOutputStream fos = new FileOutputStream("book.dat");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			DataOutputStream dos = new DataOutputStream(fos);
+			
+			dos.writeInt(bm.size());
+			dos.close();
 			for (Book book : bm) {
 				oos.writeObject(book);			
 			}
@@ -132,10 +183,17 @@ public class IBookManagerImpl implements IBookMgr {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+		// 서버로 전송
+		// send();		
 	}	
 	
 	public int getSize() {
 		return bm.size();
+	}
+	
+	public void send() {
+		BookClient client = new BookClient();
+		client.start();
+		System.out.println("전송완료!");
 	}
 }
