@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 /**
  * 
- * Àç±Í ÇÔ¼ö
- * µğ¹ö±ëÇÏ±â ¾î·Æ´Ù
+ * ì¬ê·€ í•¨ìˆ˜
+ * ë””ë²„ê¹…í•˜ê¸° ì–´ë µë‹¤
  * 
  * @author student
  *
@@ -27,9 +27,9 @@ public class Z04_Re {
 		}
 		else {
 			for(int i = 0; i < end; i++) {
-				// ¿©±â¼­ Áßº¹ °Ë»ç¸¦ ÇØÁÖ¾î¾ß ÇÑ´Ù.
-				// save[0]ºÎÅÍ save[step-1]±îÁö Áßº¹ÇÏÁö ¾ÊÀº
-				// ¼ö¸¦  save[step]¿¡ ³Ö¾î¾ß ÇÑ´Ù.
+				// ì—¬ê¸°ì„œ ì¤‘ë³µ ê²€ì‚¬ë¥¼ í•´ì£¼ì–´ì•¼ í•œë‹¤.
+				// save[0]ë¶€í„° save[step-1]ê¹Œì§€ ì¤‘ë³µí•˜ì§€ ì•Šì€
+				// ìˆ˜ë¥¼  save[step]ì— ë„£ì–´ì•¼ í•œë‹¤.
 				
 				boolean check = false;
 				for(int j = 0; j < step; j++) {
@@ -82,7 +82,7 @@ public class Z04_Re {
 	
 	static void g(int n , int[] arr) {
 		if ( n >= arr.length) {
-			// Á¾·áÆÄÆ®
+			// ì¢…ë£ŒíŒŒíŠ¸
 			System.out.println(Arrays.toString(arr));
 		} 
 		else {
@@ -119,9 +119,9 @@ public class Z04_Re {
 				check[arr[i]] = true;
 				
 			}
-			// »ç¿ëÇÏÁö ¾ÊÀº ¼ıÀÚµé¸¸ Ã¤¿ì°í Àç±ÍÈ£Ãâ
+			// ì‚¬ìš©í•˜ì§€ ì•Šì€ ìˆ«ìë“¤ë§Œ ì±„ìš°ê³  ì¬ê·€í˜¸ì¶œ
 			for (int i = 0; i < check.length; i++) {
-				// true¶ó¸é »ç¿ëÇÑ°Å
+				// trueë¼ë©´ ì‚¬ìš©í•œê±°
 				if(!check[i]) {
 					arr[n] = i;
 					k(n+1, arr);
@@ -142,28 +142,28 @@ public class Z04_Re {
 
 		
 		
-		System.out.println();
-		c(0, 10, 2);
-		
-		
-		System.out.println("--------------");
-		System.out.println(d(1,10));
-		
-		int num = 1357;
-		System.out.println("--------------");
-		System.out.println(f(num,4));
-		
-		System.out.println("--------------");
-
-		
-		int grr[] = {0, 0, 0};
-		int krr[] = {0, 0, 0, 0, 0};
-		g(0, grr); // 3ÀÚ¸® 2Â¡¼ö
-		h(0); // 5ÀÚ¸® 3Áø¼ö
+//		System.out.println();
+//		c(0, 10, 2);
+//		
+//		
+//		System.out.println("--------------");
+//		System.out.println(d(1,10));
+//		
+//		int num = 1357;
+//		System.out.println("--------------");
+//		System.out.println(f(num,4));
+//		
+//		System.out.println("--------------");
+//
+//		
+//		int grr[] = {0, 0, 0};
+//		int krr[] = {0, 0, 0, 0, 0};
+//		g(0, grr); // 3ìë¦¬ 2ì§•ìˆ˜
+//		h(0); // 5ìë¦¬ 3ì§„ìˆ˜
 		
 		a(arr, 0, arr.length, save);
 		
-		k(0, new int[4]);
+//		k(0, new int[4]);
 		
 	}
 }
