@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Solution_1208_SW¹®Á¦ÇØ°á±âº»1ÀÏÂ÷_Flatten_±è¼º½Ä {
+public class Solution_1208_SWë¬¸ì œí•´ê²°ê¸°ë³¸1ì¼ì°¨_Flatten_ê¹€ì„±ì‹ {
 
 	static final int IN_MAX = 100;
 	public static void main(String[] args) {
@@ -11,14 +11,14 @@ public class Solution_1208_SW¹®Á¦ÇØ°á±âº»1ÀÏÂ÷_Flatten_±è¼º½Ä {
 		
 		
 		for(int t = 1; t <= 10; t++) {
-			int N = scan.nextInt(); // ´ıÇÁÈ½¼ö
+			int N = scan.nextInt(); // ï¿½ï¿½ï¿½ï¿½È½ï¿½ï¿½
 			int[] arr = new int[IN_MAX];
 			
-			// »óÀÚ³ôÀÌ ÀÔ·Â¹Ş±â
+			// ï¿½ï¿½ï¿½Ú³ï¿½ï¿½ï¿½ ï¿½Ô·Â¹Ş±ï¿½
 			for (int i = 0; i < IN_MAX; i++) {
 				arr[i] = scan.nextInt();				
 			}
-			// 3 ´ıÇÁ È½¼ö¸¸Å­ ¹İº¹
+			// 3 ï¿½ï¿½ï¿½ï¿½ È½ï¿½ï¿½ï¿½ï¿½Å­ ï¿½İºï¿½
 			
 
 			int maxIn = 0;
@@ -27,7 +27,7 @@ public class Solution_1208_SW¹®Á¦ÇØ°á±âº»1ÀÏÂ÷_Flatten_±è¼º½Ä {
 			int min = Integer.MAX_VALUE;
 			
 			for(int k = 0; k < N; k++) {
-				// 1. max, min Ã£±â, ¹øÁöµµ Ã£±â
+				// 1. max, min Ã£ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½
 				max = Integer.MIN_VALUE;
 				min = Integer.MAX_VALUE;
 				maxIn = 0;
@@ -43,7 +43,7 @@ public class Solution_1208_SW¹®Á¦ÇØ°á±âº»1ÀÏÂ÷_Flatten_±è¼º½Ä {
 					}
 				}
 				if(arr[maxIn] - arr[minIn] == 0) break;
-				// 2. °®´ÙÁÖ±â
+				// 2. ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
 				arr[maxIn]--;
 				arr[minIn]++;
 				

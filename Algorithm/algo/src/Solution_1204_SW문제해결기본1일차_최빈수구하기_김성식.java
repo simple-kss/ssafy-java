@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Solution_1204_SW¹®Á¦ÇØ°á±âº»1ÀÏÂ÷_ÃÖºó¼ö±¸ÇÏ±â_±è¼º½Ä {
+public class Solution_1204_SWë¬¸ì œí•´ê²°ê¸°ë³¸1ì¼ì°¨_ìµœë¹ˆìˆ˜êµ¬í•˜ê¸°_ê¹€ì„±ì‹{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

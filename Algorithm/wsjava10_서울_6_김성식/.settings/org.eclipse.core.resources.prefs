@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//src/Book.java=UTF-8
+encoding//src/BookTest.java=UTF-8
+encoding//src/IBookManagerImpl.java=UTF-8
+encoding//src/IBookMgr.java=UTF-8
+encoding//src/ISBNNotFoundException.java=UTF-8
+encoding//src/Magazine.java=UTF-8
+encoding//src/QuantityException.java=UTF-8

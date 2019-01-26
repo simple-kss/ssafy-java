@@ -3,32 +3,32 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class Solution_1210_SW¹®Á¦ÇØ°á±âº»2ÀÏÂ÷_Ladder1_±è¼º½Ä {
+public class Solution_1210_SWë¬¸ì œí•´ê²°ê¸°ë³¸2ì¼ì°¨_Ladder1_ê¹€ì„±ì‹{
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-		// ÇÑÁÙ ¾¿ ÀĞ±â
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ğ±ï¿½
 		Scanner scan = new Scanner(System.in);
 		
 		int[][] arr = new int[102][102];
-		// »óÇÏÁÂ¿ì¾¿ 2Ä­¾¿ ´Ã¸®±â~
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Â¿ì¾¿ 2Ä­ï¿½ï¿½ ï¿½Ã¸ï¿½ï¿½ï¿½~
 		
-		// 0Çà
+		// 0ï¿½ï¿½
 		for (int i = 0; i < 102; i++) {
 			arr[0][i] = -1;
 			
 		}
-		// ³¡Çà		
+		// ï¿½ï¿½ï¿½ï¿½		
 		for (int i = 0; i < 102; i++) {
 			arr[101][i] = -1;
 		}
 		
-		// 0¿­
+		// 0ï¿½ï¿½
 		for (int i = 0; i < 102; i++) {
 			arr[i][0] = -1;
 		}
 		
-		// ³¡¿­
+		// ï¿½ï¿½ï¿½ï¿½
 		for (int i = 0; i < 102; i++) {
 			arr[i][101] = -1;
 			
@@ -50,7 +50,7 @@ public class Solution_1210_SW¹®Á¦ÇØ°á±âº»2ÀÏÂ÷_Ladder1_±è¼º½Ä {
 			}
 	
 			
-			// ÀÏ´Ü 2 Ã£ÀÚ
+			// ï¿½Ï´ï¿½ 2 Ã£ï¿½ï¿½
 			int twoJ = 0;
 			int twoI = 100;
 			for(int m = 1; m <= 100; m++) {
@@ -59,21 +59,21 @@ public class Solution_1210_SW¹®Á¦ÇØ°á±âº»2ÀÏÂ÷_Ladder1_±è¼º½Ä {
 				}
 			}
 			
-			// °è¼Ó ¹İº¹ÇÒ°ÅÀÓ!
+			// ï¿½ï¿½ï¿½ ï¿½İºï¿½ï¿½Ò°ï¿½ï¿½ï¿½!
 			while(true) {
 				//System.out.println(twoI + " " + twoJ);
 				if(twoI == 1) break;
 				
-				// ¿Ş/¿À 1ÀÌ ÀÖ´ÂÁö ¾øÀ» ‹š ±îÁö Âß ¿Ã¶ó°¡±â
+				// ï¿½ï¿½/ï¿½ï¿½ 1ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ã¶ó°¡±ï¿½
 				
-				// ¿À 1ÀÖ´ÂÁö ¾ø´ÂÁö
+				// ï¿½ï¿½ 1ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				if(arr[twoI][twoJ+1] == 1 ) {
 					while(true) {
-						// ¿À¸¥ÂÊÀ¸·Î °è¼Ó ÀÌµ¿
-						// º®ÀÌ ÀÖÀ» ¶§ ±îÁö
+						// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
+						// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 						twoJ++;
 						
-						// ¿·¿¡ °¥ °÷ÀÌ 0ÀÌ°Å³ª -1ÀÌ¸é break;
+						// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 0ï¿½Ì°Å³ï¿½ -1ï¿½Ì¸ï¿½ break;
 						if(arr[twoI][twoJ+1] == 0 || arr[twoI][twoJ+1] == -1) {
 							if(arr[twoI+1][twoJ] != -1 ) {
 								twoI--;								
@@ -83,14 +83,14 @@ public class Solution_1210_SW¹®Á¦ÇØ°á±âº»2ÀÏÂ÷_Ladder1_±è¼º½Ä {
 					}
 					
 				}
-				// ¿Ş 1ÀÖ´ÂÁö ¾ø´ÂÁö
+				// ï¿½ï¿½ 1ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				else if(arr[twoI][twoJ-1] == 1) {
 					while(true) {
-						// ¿ŞÂÊÀ¸·Î °è¼Ó ÀÌµ¿
-						// º®ÀÌ ÀÖÀ» ¶§ ±îÁö
+						// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
+						// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 						twoJ--;
 						
-						// º®ÀÌ¶ó¸é
+						// ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½
 						if(arr[twoI][twoJ-1] == 0 || arr[twoI][twoJ-1] == -1) {
 							if(arr[twoI+1][twoJ] != -1 ) {
 								twoI--;								
@@ -101,7 +101,7 @@ public class Solution_1210_SW¹®Á¦ÇØ°á±âº»2ÀÏÂ÷_Ladder1_±è¼º½Ä {
 					}
 					
 				}
-				// ¾Æ´Ï¸é Âß ¿Ã¶ó°¡±â
+				// ï¿½Æ´Ï¸ï¿½ ï¿½ï¿½ ï¿½Ã¶ó°¡±ï¿½
 				else
 					twoI--;
 

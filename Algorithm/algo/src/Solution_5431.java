@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Solution_5431_¹Î¼®ÀÌÀÇ°úÁ¦Ã¼Å©ÇÏ±â_±è¼º½Ä {
+public class Solution_5431{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -9,8 +9,8 @@ public class Solution_5431_¹Î¼®ÀÌÀÇ°úÁ¦Ã¼Å©ÇÏ±â_±è¼º½Ä {
 		int T = scan.nextInt();
 		
 		for(int t = 1; t <= T; t++) {
-			int N = scan.nextInt(); // ÇĞ»ı ¼ö
-			int K = scan.nextInt(); // °úÁ¦¸¦ Á¦ÃâÇÑ »ç¶÷ ¼ö
+			int N = scan.nextInt(); // ï¿½Ğ»ï¿½ ï¿½ï¿½
+			int K = scan.nextInt(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½
 			
 			int[] stu = new int[N+1];
 			

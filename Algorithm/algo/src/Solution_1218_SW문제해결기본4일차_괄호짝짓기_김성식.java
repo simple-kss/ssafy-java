@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Solution_1218_SW¹®Á¦ÇØ°á±âº»4ÀÏÂ÷_°ıÈ£Â¦Áş±â_±è¼º½Ä {
+public class Solution_1218_SWë¬¸ì œí•´ê²°ê¸°ë³¸4ì¼ì°¨_ê´„í˜¸ì§ì§“ê¸°_ê¹€ì„±ì‹ {
 	
 	public static void main(String[] args) {
 
@@ -18,8 +18,8 @@ public class Solution_1218_SW¹®Á¦ÇØ°á±âº»4ÀÏÂ÷_°ıÈ£Â¦Áş±â_±è¼º½Ä {
 			int len = s.length();
 			for (int i = 0; i < len; i++) {
 				char c = s.charAt(i);
-				// ³Ö¾î¾ß ÇÒ°Ô ´İÈù°ú·Î¸é
-				// ÇöÀç ¸Ç ²À´ë±â°¡ ¿­¸°°ıÈ£ÀÎÁö È®ÀÎ ÈÄ popÇÑ´Ù!
+				// ï¿½Ö¾ï¿½ï¿½ ï¿½Ò°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¸ï¿½
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½â°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ ï¿½ï¿½ popï¿½Ñ´ï¿½!
 				if ( c == ')') {
 					if(!st.empty() ) {
 						char pkc = st.peek();
@@ -61,9 +61,9 @@ public class Solution_1218_SW¹®Á¦ÇØ°á±âº»4ÀÏÂ÷_°ıÈ£Â¦Áş±â_±è¼º½Ä {
 				}		
 			}
 			
-			// ºñ¾îÀÖÂî ¾Ê´Ù¸é ¹«È¿ÇÑ°Å
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Ù¸ï¿½ ï¿½ï¿½È¿ï¿½Ñ°ï¿½
 			if(!st.empty())
-				// ¹«È¿ÇÔ
+				// ï¿½ï¿½È¿ï¿½ï¿½
 				System.out.printf("#%d 0\n",t);
 			else
 				System.out.printf("#%d 1\n",t);

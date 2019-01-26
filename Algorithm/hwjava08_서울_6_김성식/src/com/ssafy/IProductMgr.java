@@ -35,6 +35,12 @@ public interface IProductMgr {
 	// 12. 전체 재고 상품 금액을 구하는 기능
 	public double total();
 	
+	// 13.
+	public void open();
+	
+	// 14.
+	public void close();
+	
 	public int getSize();
 
 }

@@ -1,16 +1,16 @@
 
-public class Solution_ÀÌÁø°Ë»ö_±è¼º½Ä {
+public class Solution_ì´ì§„ê²€ìƒ‰ {
 	
-	//Àç±Í¹æ¹ý
+	//ï¿½ï¿½Í¹ï¿½ï¿½
 	public static void binarySearch(int arr[], int s, int e, int key) {
 		int m = (s + e)/2;
 		if(s > e) {
-			System.out.println("¸øÃ£À½");
+			System.out.println("ï¿½ï¿½Ã£ï¿½ï¿½");
 			return;
 		}		
 		
 		if(arr[m] == key) {
-			System.out.println("Ã£À½");
+			System.out.println("Ã£ï¿½ï¿½");
 		}
 		else if(key > arr[m]) {
 			binarySearch(arr, m+1, e, key );
@@ -25,7 +25,7 @@ public class Solution_ÀÌÁø°Ë»ö_±è¼º½Ä {
 		// TODO Auto-generated method stub
 		int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 		
-		// ¹Ýº¹¹® ¹æ¹ý
+		// ï¿½Ýºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		int key = 5;
 		int s = 0;
 		int e = 9;
@@ -35,7 +35,7 @@ public class Solution_ÀÌÁø°Ë»ö_±è¼º½Ä {
 			
 			m = (s + e) / 2;
 			if(arr[m] == key) {
-				System.out.println("Ã£À½");
+				System.out.println("Ã£ï¿½ï¿½");
 				break;
 			}
 			else if( key > arr[m]) {
@@ -48,7 +48,7 @@ public class Solution_ÀÌÁø°Ë»ö_±è¼º½Ä {
 			}	
 		}
 		if( s > e ) {
-			System.out.println("¸øÃ£À½");
+			System.out.println("ï¿½ï¿½Ã£ï¿½ï¿½");
 		}
 		
 		
