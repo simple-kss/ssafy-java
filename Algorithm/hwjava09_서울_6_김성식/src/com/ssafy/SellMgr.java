@@ -2,28 +2,28 @@ package com.ssafy;
 
 import java.util.ArrayList;
 
-public class RegisterMgr implements Manageable<Register> {
-	ArrayList<Register> list = new ArrayList<Register>();
+public class SellMgr implements Manageable<Sell> {
+	ArrayList<Sell> list = new ArrayList<Sell>();
 
 	// ÀúÀå
-	public void add(Register r) {
+	public void add(Sell r) {
 		list.add(r);
 	}
 
 	@Override
-	public Register search(int i) {
+	public Sell search(int i) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Register search(String s) {
+	public Sell search(String s) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int search(Register t) {
+	public int search(Sell t) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

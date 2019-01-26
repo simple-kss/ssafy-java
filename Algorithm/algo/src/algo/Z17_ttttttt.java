@@ -118,7 +118,8 @@ public class Z17_ttttttt {
 		
 		// 2가지 방법이 있다. ***
 		for (Pest k : ks) {
-			System.err.println(k);
+			System.err.print(k);
+			System.err.print(hm.get(k));
 		}
 		
 		Iterator<Pest> iter = ks.iterator();
