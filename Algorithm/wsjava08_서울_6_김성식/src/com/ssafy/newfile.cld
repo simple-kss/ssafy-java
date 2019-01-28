@@ -100,6 +100,7 @@
                 </params>
                 <isAbstract>false</isAbstract>
                 <isStatic>true</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
             </children>
             <filterProperty/>
@@ -287,6 +288,7 @@
                       </params>
                       <isAbstract>false</isAbstract>
                       <isStatic>false</isStatic>
+                      <isFinal>false</isFinal>
                     </net.java.amateras.uml.classdiagram.model.OperationModel>
                     <net.java.amateras.uml.classdiagram.model.OperationModel>
                       <backgroundColor reference="../../../../../../../../../backgroundColor"/>
@@ -308,6 +310,7 @@
                       <params/>
                       <isAbstract>false</isAbstract>
                       <isStatic>false</isStatic>
+                      <isFinal>false</isFinal>
                     </net.java.amateras.uml.classdiagram.model.OperationModel>
                     <net.java.amateras.uml.classdiagram.model.OperationModel>
                       <backgroundColor reference="../../../../../../../../../backgroundColor"/>
@@ -334,6 +337,7 @@
                       </params>
                       <isAbstract>false</isAbstract>
                       <isStatic>false</isStatic>
+                      <isFinal>false</isFinal>
                     </net.java.amateras.uml.classdiagram.model.OperationModel>
                     <net.java.amateras.uml.classdiagram.model.OperationModel>
                       <backgroundColor reference="../../../../../../../../../backgroundColor"/>
@@ -360,6 +364,7 @@
                       </params>
                       <isAbstract>false</isAbstract>
                       <isStatic>false</isStatic>
+                      <isFinal>false</isFinal>
                     </net.java.amateras.uml.classdiagram.model.OperationModel>
                     <net.java.amateras.uml.classdiagram.model.OperationModel>
                       <backgroundColor reference="../../../../../../../../../backgroundColor"/>
@@ -381,6 +386,7 @@
                       <params/>
                       <isAbstract>false</isAbstract>
                       <isStatic>false</isStatic>
+                      <isFinal>false</isFinal>
                     </net.java.amateras.uml.classdiagram.model.OperationModel>
                     <net.java.amateras.uml.classdiagram.model.OperationModel>
                       <backgroundColor reference="../../../../../../../../../backgroundColor"/>
@@ -402,6 +408,7 @@
                       <params/>
                       <isAbstract>false</isAbstract>
                       <isStatic>false</isStatic>
+                      <isFinal>false</isFinal>
                     </net.java.amateras.uml.classdiagram.model.OperationModel>
                     <net.java.amateras.uml.classdiagram.model.OperationModel>
                       <backgroundColor reference="../../../../../../../../../backgroundColor"/>
@@ -428,6 +435,7 @@
                       </params>
                       <isAbstract>false</isAbstract>
                       <isStatic>false</isStatic>
+                      <isFinal>false</isFinal>
                     </net.java.amateras.uml.classdiagram.model.OperationModel>
                     <net.java.amateras.uml.classdiagram.model.OperationModel>
                       <backgroundColor reference="../../../../../../../../../backgroundColor"/>
@@ -454,6 +462,7 @@
                       </params>
                       <isAbstract>false</isAbstract>
                       <isStatic>false</isStatic>
+                      <isFinal>false</isFinal>
                     </net.java.amateras.uml.classdiagram.model.OperationModel>
                     <net.java.amateras.uml.classdiagram.model.OperationModel>
                       <backgroundColor reference="../../../../../../../../../backgroundColor"/>
@@ -480,6 +489,7 @@
                       </params>
                       <isAbstract>false</isAbstract>
                       <isStatic>false</isStatic>
+                      <isFinal>false</isFinal>
                     </net.java.amateras.uml.classdiagram.model.OperationModel>
                     <net.java.amateras.uml.classdiagram.model.OperationModel>
                       <backgroundColor reference="../../../../../../../../../backgroundColor"/>
@@ -501,6 +511,7 @@
                       <params/>
                       <isAbstract>false</isAbstract>
                       <isStatic>false</isStatic>
+                      <isFinal>false</isFinal>
                     </net.java.amateras.uml.classdiagram.model.OperationModel>
                     <net.java.amateras.uml.classdiagram.model.OperationModel>
                       <backgroundColor reference="../../../../../../../../../backgroundColor"/>
@@ -522,6 +533,7 @@
                       <params/>
                       <isAbstract>false</isAbstract>
                       <isStatic>false</isStatic>
+                      <isFinal>false</isFinal>
                     </net.java.amateras.uml.classdiagram.model.OperationModel>
                     <net.java.amateras.uml.classdiagram.model.OperationModel>
                       <backgroundColor reference="../../../../../../../../../backgroundColor"/>
@@ -543,6 +555,7 @@
                       <params/>
                       <isAbstract>false</isAbstract>
                       <isStatic>false</isStatic>
+                      <isFinal>false</isFinal>
                     </net.java.amateras.uml.classdiagram.model.OperationModel>
                   </children>
                   <filterProperty/>
@@ -627,6 +640,8 @@
                 <name>bm</name>
                 <type>ArrayList&lt;Book&gt;</type>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
+                <isEnumCst>false</isEnumCst>
               </net.java.amateras.uml.classdiagram.model.AttributeModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -653,6 +668,7 @@
                 </params>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -674,6 +690,7 @@
                 <params/>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -700,6 +717,7 @@
                 </params>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -726,6 +744,7 @@
                 </params>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -747,6 +766,7 @@
                 <params/>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -768,6 +788,7 @@
                 <params/>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -794,6 +815,7 @@
                 </params>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -820,6 +842,7 @@
                 </params>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -846,6 +869,7 @@
                 </params>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -867,6 +891,7 @@
                 <params/>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -888,6 +913,7 @@
                 <params/>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -909,6 +935,7 @@
                 <params/>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
             </children>
             <filterProperty/>
@@ -1071,6 +1098,8 @@
                 <name>year</name>
                 <type>int</type>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
+                <isEnumCst>false</isEnumCst>
               </net.java.amateras.uml.classdiagram.model.AttributeModel>
               <net.java.amateras.uml.classdiagram.model.AttributeModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -1090,6 +1119,8 @@
                 <name>month</name>
                 <type>int</type>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
+                <isEnumCst>false</isEnumCst>
               </net.java.amateras.uml.classdiagram.model.AttributeModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -1111,6 +1142,7 @@
                 <params/>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -1137,6 +1169,7 @@
                 </params>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -1158,6 +1191,7 @@
                 <params/>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -1184,6 +1218,7 @@
                 </params>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -1238,6 +1273,7 @@
                 </params>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -1284,6 +1320,7 @@
                 </params>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -1326,6 +1363,7 @@
                 </params>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -1347,6 +1385,7 @@
                 <params/>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
               <net.java.amateras.uml.classdiagram.model.OperationModel>
                 <backgroundColor reference="../../../../../../backgroundColor"/>
@@ -1368,6 +1407,7 @@
                 <params/>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
               </net.java.amateras.uml.classdiagram.model.OperationModel>
             </children>
             <filterProperty/>
@@ -1459,6 +1499,8 @@
           <name>isbn</name>
           <type>String</type>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
+          <isEnumCst>false</isEnumCst>
         </net.java.amateras.uml.classdiagram.model.AttributeModel>
         <net.java.amateras.uml.classdiagram.model.AttributeModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1478,6 +1520,8 @@
           <name>title</name>
           <type>String</type>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
+          <isEnumCst>false</isEnumCst>
         </net.java.amateras.uml.classdiagram.model.AttributeModel>
         <net.java.amateras.uml.classdiagram.model.AttributeModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1497,6 +1541,8 @@
           <name>author</name>
           <type>String</type>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
+          <isEnumCst>false</isEnumCst>
         </net.java.amateras.uml.classdiagram.model.AttributeModel>
         <net.java.amateras.uml.classdiagram.model.AttributeModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1516,6 +1562,8 @@
           <name>publisher</name>
           <type>String</type>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
+          <isEnumCst>false</isEnumCst>
         </net.java.amateras.uml.classdiagram.model.AttributeModel>
         <net.java.amateras.uml.classdiagram.model.AttributeModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1535,6 +1583,8 @@
           <name>price</name>
           <type>int</type>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
+          <isEnumCst>false</isEnumCst>
         </net.java.amateras.uml.classdiagram.model.AttributeModel>
         <net.java.amateras.uml.classdiagram.model.AttributeModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1554,6 +1604,8 @@
           <name>desc</name>
           <type>String</type>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
+          <isEnumCst>false</isEnumCst>
         </net.java.amateras.uml.classdiagram.model.AttributeModel>
         <net.java.amateras.uml.classdiagram.model.OperationModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1575,6 +1627,7 @@
           <params/>
           <isAbstract>false</isAbstract>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
         </net.java.amateras.uml.classdiagram.model.OperationModel>
         <net.java.amateras.uml.classdiagram.model.OperationModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1601,6 +1654,7 @@
           </params>
           <isAbstract>false</isAbstract>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
         </net.java.amateras.uml.classdiagram.model.OperationModel>
         <net.java.amateras.uml.classdiagram.model.OperationModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1622,6 +1676,7 @@
           <params/>
           <isAbstract>false</isAbstract>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
         </net.java.amateras.uml.classdiagram.model.OperationModel>
         <net.java.amateras.uml.classdiagram.model.OperationModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1648,6 +1703,7 @@
           </params>
           <isAbstract>false</isAbstract>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
         </net.java.amateras.uml.classdiagram.model.OperationModel>
         <net.java.amateras.uml.classdiagram.model.OperationModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1669,6 +1725,7 @@
           <params/>
           <isAbstract>false</isAbstract>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
         </net.java.amateras.uml.classdiagram.model.OperationModel>
         <net.java.amateras.uml.classdiagram.model.OperationModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1695,6 +1752,7 @@
           </params>
           <isAbstract>false</isAbstract>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
         </net.java.amateras.uml.classdiagram.model.OperationModel>
         <net.java.amateras.uml.classdiagram.model.OperationModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1716,6 +1774,7 @@
           <params/>
           <isAbstract>false</isAbstract>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
         </net.java.amateras.uml.classdiagram.model.OperationModel>
         <net.java.amateras.uml.classdiagram.model.OperationModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1742,6 +1801,7 @@
           </params>
           <isAbstract>false</isAbstract>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
         </net.java.amateras.uml.classdiagram.model.OperationModel>
         <net.java.amateras.uml.classdiagram.model.OperationModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1763,6 +1823,7 @@
           <params/>
           <isAbstract>false</isAbstract>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
         </net.java.amateras.uml.classdiagram.model.OperationModel>
         <net.java.amateras.uml.classdiagram.model.OperationModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1789,6 +1850,7 @@
           </params>
           <isAbstract>false</isAbstract>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
         </net.java.amateras.uml.classdiagram.model.OperationModel>
         <net.java.amateras.uml.classdiagram.model.OperationModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1810,6 +1872,7 @@
           <params/>
           <isAbstract>false</isAbstract>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
         </net.java.amateras.uml.classdiagram.model.OperationModel>
         <net.java.amateras.uml.classdiagram.model.OperationModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1836,6 +1899,7 @@
           </params>
           <isAbstract>false</isAbstract>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
         </net.java.amateras.uml.classdiagram.model.OperationModel>
         <net.java.amateras.uml.classdiagram.model.OperationModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1882,6 +1946,7 @@
           </params>
           <isAbstract>false</isAbstract>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
         </net.java.amateras.uml.classdiagram.model.OperationModel>
         <net.java.amateras.uml.classdiagram.model.OperationModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1924,6 +1989,7 @@
           </params>
           <isAbstract>false</isAbstract>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
         </net.java.amateras.uml.classdiagram.model.OperationModel>
         <net.java.amateras.uml.classdiagram.model.OperationModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1945,6 +2011,7 @@
           <params/>
           <isAbstract>false</isAbstract>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
         </net.java.amateras.uml.classdiagram.model.OperationModel>
         <net.java.amateras.uml.classdiagram.model.OperationModel>
           <backgroundColor reference="../../../backgroundColor"/>
@@ -1966,6 +2033,7 @@
           <params/>
           <isAbstract>false</isAbstract>
           <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
         </net.java.amateras.uml.classdiagram.model.OperationModel>
       </children>
       <filterProperty/>

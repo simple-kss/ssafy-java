@@ -1,18 +1,22 @@
 package com.ssafy;
 
-public class Register {
+public class Sell {
 	private int pId;
 	private int mId;
+	private int amount;
 	
-	public Register() {
+	public Sell() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-	public Register(int pId, int mId) {
+	}	
+	public Sell(int pId, int mId, int amount) {
 		super();
 		this.pId = pId;
 		this.mId = mId;
+		this.amount = amount;
 	}
+
+
 	public int getpId() {
 		return pId;
 	}
@@ -25,10 +29,10 @@ public class Register {
 	public void setmId(int mId) {
 		this.mId = mId;
 	}
-
-//	@Override
-//	public String toString() {
-//		return "영화예매" + m +" "+ p;
-//	}	
-
+	public int getAmount() {
+		return amount;
+	}
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
 }
