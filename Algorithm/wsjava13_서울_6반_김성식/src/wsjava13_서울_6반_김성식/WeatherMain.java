@@ -1,4 +1,4 @@
-package wsjava13_¼­¿ï_6¹Ý_±è¼º½Ä;
+package wsjava13_ï¿½ï¿½ï¿½ï¿½_6ï¿½ï¿½_ï¿½è¼ºï¿½ï¿½;
 
 import java.awt.Container;
 import java.awt.event.ActionEvent;
@@ -47,8 +47,8 @@ public class WeatherMain {
 	}
 
 	protected void showList() {
-		// daoÇÑÅ×¼­ ÆÄ½ÌÇÑ °á°ú°¡ µé¾î ÀÖ´Â ArrayList ¹Ù´ç¿À±â
-		// ¹Þ¾Æ¿Â ArrayListfh ghkaus(JList)¿¡ »Ñ¸®±â
+		// daoï¿½ï¿½ï¿½×¼ï¿½ ï¿½Ä½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ArrayList ï¿½Ù´ï¿½ï¿½ï¿½ï¿½
+		// ï¿½Þ¾Æ¿ï¿½ ArrayListfh ghkaus(JList)ï¿½ï¿½ ï¿½Ñ¸ï¿½ï¿½ï¿½
 		String[] s = new String[] {" ", " "};
 //		li.setListData(s);
 		li.removeAll();
@@ -56,8 +56,8 @@ public class WeatherMain {
 		
 		List<Weather> data = dao.getWeatherData();
 		
-		// ArrayList¸¦ ¹è¿­·Î ¹Ù²Û´ÙÀ½¿¡ Áý¾î³Ö¾îÁÖ¸é
-		// ÇÏ³ª¾¿ ÇÏ³ª¾¿ ²¨³»¼­ list¿¡ ÇÑÁÙ¾¿ º¸¿©ÁØ´Ù.
+		// ArrayListï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½Ù²Û´ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½Ö¸ï¿½
+		// ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ listï¿½ï¿½ ï¿½ï¿½ï¿½Ù¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
 //		System.out.println(Arrays.toString(data.toArray()));
 		li.setListData(data.toArray());
 	}
