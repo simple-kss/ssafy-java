@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 회원 정보 xml -->
+<list>
+	<members>
+		<member>
+			<name>김성식</name>
+			<hp>010-9924-4184</hp>
+			<address>010-9924-4184</address>
+		</member>
+
+		<member>
+			<name>김재룡</name>
+			<address>010-9000-4184</address>
+		</member>
+
+		<member>
+			<name>전우형</name>
+			<address>010-2000-4184</address>
+		</member>
+
+	</members>
+
+</list>
