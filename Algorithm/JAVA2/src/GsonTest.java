@@ -28,7 +28,7 @@ public class GsonTest {
 	public static void makeJson() {
 		Gson gson = new Gson();
 		JsonObject obj = new JsonObject();
-		obj.addProperty("num", 900);d
+		obj.addProperty("num", 900);
 		obj.addProperty("name", "june");
 		obj.addProperty("address", "Paris");
 		
