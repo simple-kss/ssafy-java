@@ -1,6 +1,6 @@
 package algo;
 
-public class Solution_BubbleSort_±è¼º½Ä {
+public class Solution_BubbleSort_ê¹€ì„±ì‹ {
 	static int[] arr = {3,7,4,6,3,5,1,0};
 
 	public static void main(String[] args) {

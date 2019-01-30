@@ -1,4 +1,4 @@
-package wsjava13_¼­¿ï_6¹İ_±è¼º½Ä;
+package wsjava13_ì„œìš¸_6ë°˜_ê¹€ì„±ì‹;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -14,21 +14,21 @@ import org.w3c.dom.NodeList;
 
 
 public class WeatherDAO {
-	// ¹Ş¾Æ¿Ã ¶§ ListÅ¸ÀÔÀÌ¿©¼­ List·Î ¼±¾ğÇÔ
+	// ë°›ì•„ì˜¬ ë•Œ Listíƒ€ì…ì´ì—¬ì„œ Listë¡œ ì„ ì–¸í•¨
 	private static WeatherDAO weatherDAO;
-	private List<Weather> list; // ÆÄ½ÌµÈ °á°ú°¡ ÀúÀåµÇ¾î ÀÖ´Â ¸®½ºÆ®
+	private List<Weather> list; // íŒŒì‹±ëœ ê²°ê³¼ê°€ ì €ì¥ë˜ì–´ ìˆëŠ” ë¦¬ìŠ¤íŠ¸
 	String url = "http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1162058500";
 			
 	Document doc;
 	private WeatherDAO() throws Exception {
 		list = new ArrayList<Weather>();
-		//ÁØºñÀÛ¾÷
+		//ì¤€ë¹„ì‘ì—…
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		DocumentBuilder parser = dbf.newDocumentBuilder();
 //		InputStream in = new URL(url).openConnection().getInputStream();
-		// InputStream ÇØ¼­ ¹Ş¾Æ¿Â´Ù
+		// InputStream í•´ì„œ ë°›ì•„ì˜¨ë‹¤
 		
-		// ¹Ù·Î ÁÖ¼Ò¸¦ ÁÖ¾îµµ µÈ´Ù.
+		// ë°”ë¡œ ì£¼ì†Œë¥¼ ì£¼ì–´ë„ ëœë‹¤.
 //		doc = parser.parse(in);
 		doc = parser.parse(url);
 			// Document doc = parser.parse("xml/member.xml");
@@ -42,8 +42,8 @@ public class WeatherDAO {
 	}
 	
 	public List<Weather> getWeatherData() {
-		// Á¶±İ Àü¿¡ ¸¸µé¾î ³ù¶² vo¾È¿¡ ÀúÀåÀ» ½ÃÄÑ³õ¾Æ¾ß ÇÑ´Ù.
-		// loop¾È¿¡¼­ Àû´çÇÑ ½ÃÁ¡¿¡¼­ new°´Ã¼ »ı¼ºÇÏ¸é¼­, vo¿¡ ÀúÀåÀ» ÇØ³õ¾Æ¾ßÇÑ´Ù.
+		// ì¡°ê¸ˆ ì „ì— ë§Œë“¤ì–´ ë†¨ë–¤ voì•ˆì— ì €ì¥ì„ ì‹œì¼œë†“ì•„ì•¼ í•œë‹¤.
+		// loopì•ˆì—ì„œ ì ë‹¹í•œ ì‹œì ì—ì„œ newê°ì²´ ìƒì„±í•˜ë©´ì„œ, voì— ì €ì¥ì„ í•´ë†“ì•„ì•¼í•œë‹¤.
 		
 		NodeList itemList = doc.getElementsByTagName("data");
 		
@@ -60,7 +60,7 @@ public class WeatherDAO {
 				String nodeName = child.getNodeName();
 				
 				if(nodeName.equalsIgnoreCase("hour")) {
-					// ÀÌ¸§ Ãâ·Â
+					// ì´ë¦„ ì¶œë ¥
 					w.setHour(Integer.parseInt(child.getFirstChild().getNodeValue()) );
 //					System.out.println(child.getFirstChild().getNodeValue());
 				}
@@ -74,8 +74,8 @@ public class WeatherDAO {
 					w.setReh(Integer.parseInt(child.getFirstChild().getNodeValue()) );
 				}
 			} // end of childList
-			list.add(w); // ArrayList ÀúÀå
-			// ÀÌ·¯¸é DAO°¡ ÇÒÀÏÀÌ ³¡³²
+			list.add(w); // ArrayList ì €ì¥
+			// ì´ëŸ¬ë©´ DAOê°€ í• ì¼ì´ ëë‚¨
 		}// end of itemList
 		return list;
 		

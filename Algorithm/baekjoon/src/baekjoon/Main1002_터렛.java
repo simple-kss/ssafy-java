@@ -24,7 +24,7 @@ import java.util.StringTokenizer;
  */
 
 
-public class Main1002_ÅÍ·¿ {
+public class Main1002_í„°ë › {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
@@ -74,35 +74,35 @@ public class Main1002_ÅÍ·¿ {
 //			System.out.println(distance);
 //			System.out.println(rDistance);
 			
-			// µÑÀÌ ÀÏÄ¡ÇÏ´Â °æ¿ì
+			// ë‘˜ì´ ì¼ì¹˜í•˜ëŠ” ê²½ìš°
 			if(x1 == x2 && y1 == y2 && r1 == r2) {
 				System.out.println(-1);
 				continue;
 			}
-			// µÑÀÌ ¿ø ¾È¿¡ ÀÖµû¸é (Å« ¿øÀÇ ¹İÁö¸§º¸´Ù µÑ »çÀÌÀÇ °Å¸®°¡ ÀÛ´Ù¸é)
-			// ÀÛÀº ¿øÀÇ Áß½ÉÀÌ Å« ¿ø¿¡ ÀÖµû´Â ¾ê±â
+			// ë‘˜ì´ ì› ì•ˆì— ìˆë”°ë©´ (í° ì›ì˜ ë°˜ì§€ë¦„ë³´ë‹¤ ë‘˜ ì‚¬ì´ì˜ ê±°ë¦¬ê°€ ì‘ë‹¤ë©´)
+			// ì‘ì€ ì›ì˜ ì¤‘ì‹¬ì´ í° ì›ì— ìˆë”°ëŠ” ì–˜ê¸°
 			if(distance <= (double)bigR){
-				// Å« ¿ø °æ·Î¿¡ ÀÛÀº ¿øÀÇ Áß½ÉÀÌ ÀÕ´Â °æ¿ì!
+				// í° ì› ê²½ë¡œì— ì‘ì€ ì›ì˜ ì¤‘ì‹¬ì´ ì‡ëŠ” ê²½ìš°!
 				if(distance == (double)bigR) {
 					System.out.println(2);					
 				}
-				// ÀÛÀº¿øÀÌ Å«¿ø ¾È¿¡ ÀÖ´Âµ¥ 2Á¡ÀÌ Á¢ÇÑ °æ¿ì
+				// ì‘ì€ì›ì´ í°ì› ì•ˆì— ìˆëŠ”ë° 2ì ì´ ì ‘í•œ ê²½ìš°
 				else if(distance + (double)smallR > (double)bigR) {
 					System.out.println(2);
 				}
 				
-				// Å« ¿ø¿¡ ÀÛÀº ¿øÀÌ ÀÖ´Â °æ¿ìÀÎµ¥ ÇÑ Á¡¿¡¸¸ Á¢ÇÏ´Â °æ¿ì!
+				// í° ì›ì— ì‘ì€ ì›ì´ ìˆëŠ” ê²½ìš°ì¸ë° í•œ ì ì—ë§Œ ì ‘í•˜ëŠ” ê²½ìš°!
 				else if(distance + (double)smallR == (double)bigR) {
 					System.out.println(1);
 				}
 
-				// Å« ¿ø ¾È¿¡ ÀÛÀº¿øÀÌ ÀÖ´Âµ¥ ¶°ÀÖ´Â °æ¿ì
+				// í° ì› ì•ˆì— ì‘ì€ì›ì´ ìˆëŠ”ë° ë– ìˆëŠ” ê²½ìš°
 				else {
 					System.out.println(0);
 				}
 			}
 			else {
-				// µÑÀÌ ¿ø ¹Û¿¡ ÀÖ´Ù¸é
+				// ë‘˜ì´ ì› ë°–ì— ìˆë‹¤ë©´
 				if(distance > (double)rDistance) {
 					System.out.println(0);
 				}

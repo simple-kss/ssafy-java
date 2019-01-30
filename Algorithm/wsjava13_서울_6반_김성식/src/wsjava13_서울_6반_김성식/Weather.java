@@ -1,4 +1,4 @@
-package wsjava13_¼­¿ï_6¹İ_±è¼º½Ä;
+package wsjava13_ì„œìš¸_6ë°˜_ê¹€ì„±ì‹;
 
 public class Weather {
 	private int hour;
@@ -7,7 +7,7 @@ public class Weather {
 	private int reh;
 	@Override
 	public String toString() {
-		return "½Ã : " +hour + ", ¿Âµµ : " + temp + ", »óÅÂ : " + wfKor + ", ½Àµµ : " + reh;
+		return "ì‹œ : " +hour + ", ì˜¨ë„ : " + temp + ", ìƒíƒœ : " + wfKor + ", ìŠµë„ : " + reh;
 	}
 	public int getHour() {
 		return hour;

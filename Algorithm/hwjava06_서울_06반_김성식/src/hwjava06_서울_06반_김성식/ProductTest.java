@@ -1,4 +1,4 @@
-package hwjava06_¼­¿ï_06¹İ_±è¼º½Ä;
+package hwjava06_ì„œìš¸_06ë°˜_ê¹€ì„±ì‹;
 
 import java.util.Scanner;
 
@@ -11,90 +11,90 @@ public class ProductTest {
 		ProductMgr pm = new ProductMgr();
 
 		pm.add(new Product("1000","HTC",10000,5));
-		pm.add(new Product("1001","°¶·°½Ã",1000,5));
-		pm.add(new Product("1002","°¶³ëÆ®",2500,4));
+		pm.add(new Product("1001","ê°¤ëŸ­ì‹œ",1000,5));
+		pm.add(new Product("1002","ê°¤ë…¸íŠ¸",2500,4));
 		pm.add(new Product("1003","G6",500,8));
-		pm.add(new Product("1004","ÇÈ¼¿2",1200,5));
-		pm.add(new Product("1005","¾ÆÀÌÆùX",3000,5));
-		pm.add(new Product("1006","¸ğÅä·Î¶ó",5000,2));
+		pm.add(new Product("1004","í”½ì…€2",1200,5));
+		pm.add(new Product("1005","ì•„ì´í°X",3000,5));
+		pm.add(new Product("1006","ëª¨í† ë¡œë¼",5000,2));
 		
 		while(true) {
-			System.out.println("<<< Àç°í °ü¸® ÇÁ·Î±×·¥ >>>");
-			System.out.println("1. Àç°í Á¤º¸ ÀÔ·Â");
-			System.out.println("2. Àç°í Á¤º¸ ÀüÃ¼ °Ë»ö");
-			System.out.println("3. »óÇ°¹øÈ£ °Ë»ö");
-			System.out.println("4. »óÇ°¸í °Ë»ö");
-			System.out.println("5. »óÇ°°¡°İ º¯°æ");
-			System.out.println("6. »óÇ°¹øÈ£·Î »óÇ° »èÁ¦");
-			System.out.println("7. ÀüÃ¼ Àç°í »óÇ° ±İ¾× Ãâ·Â");			
-			System.out.println("0. Á¾·á");
-			System.out.print("¿øÇÏ´Â ¹øÈ£¸¦ ¼±ÅÃÇÏ¼¼¿ä. ");
+			System.out.println("<<< ì¬ê³  ê´€ë¦¬ í”„ë¡œê·¸ë¨ >>>");
+			System.out.println("1. ì¬ê³  ì •ë³´ ì…ë ¥");
+			System.out.println("2. ì¬ê³  ì •ë³´ ì „ì²´ ê²€ìƒ‰");
+			System.out.println("3. ìƒí’ˆë²ˆí˜¸ ê²€ìƒ‰");
+			System.out.println("4. ìƒí’ˆëª… ê²€ìƒ‰");
+			System.out.println("5. ìƒí’ˆê°€ê²© ë³€ê²½");
+			System.out.println("6. ìƒí’ˆë²ˆí˜¸ë¡œ ìƒí’ˆ ì‚­ì œ");
+			System.out.println("7. ì „ì²´ ì¬ê³  ìƒí’ˆ ê¸ˆì•¡ ì¶œë ¥");			
+			System.out.println("0. ì¢…ë£Œ");
+			System.out.print("ì›í•˜ëŠ” ë²ˆí˜¸ë¥¼ ì„ íƒí•˜ì„¸ìš”. ");
 			int select = scan.nextInt();
 			scan.nextLine();
-			String str; // ÀÔ·Â¹Ş´Â ¹®ÀÚ¿­
-			Product[] temp; // Á¤º¸¸¦ ÀúÀåÇÏ´Â Movie¹è¿­
+			String str; // ì…ë ¥ë°›ëŠ” ë¬¸ìì—´
+			Product[] temp; // ì •ë³´ë¥¼ ì €ì¥í•˜ëŠ” Movieë°°ì—´
 			
 			switch(select) {
-			case 1: // 1. »óÇ° Á¤º¸ ÀÔ·Â
+			case 1: // 1. ìƒí’ˆ ì •ë³´ ì…ë ¥
 				Product t = new Product();
-				System.out.print("»óÇ°¹øÈ£  >> ");
+				System.out.print("ìƒí’ˆë²ˆí˜¸  >> ");
 				t.setIsbn(scan.nextLine());
-				System.out.print("»óÇ°¸í >> ");
+				System.out.print("ìƒí’ˆëª… >> ");
 				t.setName(scan.nextLine()); 
-				System.out.print("»óÇ°°¡°İ >> ");
+				System.out.print("ìƒí’ˆê°€ê²© >> ");
 				t.setPrice(scan.nextInt());
 				scan.nextLine();
-				System.out.print("»óÇ°¼ö·® >> ");
+				System.out.print("ìƒí’ˆìˆ˜ëŸ‰ >> ");
 				t.setAmount(scan.nextInt());
 				scan.nextLine();
 				
 				pm.add(t);
 				
 				break;
-			case 2: // 2. »óÇ° Á¤º¸ ÀüÃ¼ °Ë»ö
+			case 2: // 2. ìƒí’ˆ ì •ë³´ ì „ì²´ ê²€ìƒ‰
 				temp = pm.search();
 				for(int i = 0; i < pm.getSize() ; i++) {
 					System.out.println(temp[i].toString());					
 				}
 				break;
-			case 3: // 3. »óÇ°¹øÈ£·Î »óÇ°À» °Ë»ö
-				System.out.print("»óÇ°¹øÈ£¸¦ °Ë»öÇÏ¼¼¿ä : ");
+			case 3: // 3. ìƒí’ˆë²ˆí˜¸ë¡œ ìƒí’ˆì„ ê²€ìƒ‰
+				System.out.print("ìƒí’ˆë²ˆí˜¸ë¥¼ ê²€ìƒ‰í•˜ì„¸ìš” : ");
 				str = scan.next();
 				temp = pm.search(str);
 				for(int i = 0; temp[i] != null; i++) {
 					System.out.println(temp[i].toString());					
 				}
 				break;
-			case 4: // 4. »óÇ°¸íÀ¸·Î »óÇ°À» °Ë»ö
-				System.out.print("»óÇ°¸íÀ» °Ë»öÇÏ¼¼¿ä : ");
+			case 4: // 4. ìƒí’ˆëª…ìœ¼ë¡œ ìƒí’ˆì„ ê²€ìƒ‰
+				System.out.print("ìƒí’ˆëª…ì„ ê²€ìƒ‰í•˜ì„¸ìš” : ");
 				str = scan.next();
 				temp = pm.searchName(str);
 				for(int i = 0; temp[i] != null; i++) {
 					System.out.println(temp[i].toString());					
 				}
 				break;
-			case 5: // 5. »óÇ°¹øÈ£¿Í °¡°İÀ» ÀÔ·Â ¹Ş¾Æ »óÇ° °¡°İ º¯°æ
-				System.out.print("»óÇ°¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			case 5: // 5. ìƒí’ˆë²ˆí˜¸ì™€ ê°€ê²©ì„ ì…ë ¥ ë°›ì•„ ìƒí’ˆ ê°€ê²© ë³€ê²½
+				System.out.print("ìƒí’ˆë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 				String inIsbn = scan.next();
-				System.out.print("°¡°İÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+				System.out.print("ê°€ê²©ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 				int inPrice = scan.nextInt();
 				
 				pm.update(inIsbn, inPrice);
 	
 				break;
-			case 6: // 6. »óÇ°¹øÈ£·Î »óÇ°À» »èÁ¦
-				System.out.print("»óÇ°¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			case 6: // 6. ìƒí’ˆë²ˆí˜¸ë¡œ ìƒí’ˆì„ ì‚­ì œ
+				System.out.print("ìƒí’ˆë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 				str = scan.next();
 				pm.delete(str);
 				break;
-			case 7: // 7. ÀüÃ¼ Àç°í »óÇ° ±İ¾×À» ±¸ÇÏ±â
-				System.out.println("ÀüÃ¼ Àç°í »óÇ° ±İ¾× : "+ pm.total());
+			case 7: // 7. ì „ì²´ ì¬ê³  ìƒí’ˆ ê¸ˆì•¡ì„ êµ¬í•˜ê¸°
+				System.out.println("ì „ì²´ ì¬ê³  ìƒí’ˆ ê¸ˆì•¡ : "+ pm.total());
 				break;
-			case 0: // 0 Á¾·á
+			case 0: // 0 ì¢…ë£Œ
 				System.exit(0);
 				break;
 			default:
-				System.out.println("´Ù¸¥ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+				System.out.println("ë‹¤ë¥¸ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 			}
 			System.out.println("");
 			

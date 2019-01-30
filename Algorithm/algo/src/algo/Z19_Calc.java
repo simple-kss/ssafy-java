@@ -26,7 +26,7 @@ public class Z19_Calc {
 		while(sToken.hasMoreTokens()) {
 			String temp = sToken.nextToken();
 			if(temp.equals("*") ) {
-				int result = num.pop() * 
+				int result = num.pop() *  1;
 				
 			}
 			

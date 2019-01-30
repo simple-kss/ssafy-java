@@ -1,10 +1,10 @@
-package hwjava06_¼­¿ï_06¹İ_±è¼º½Ä;
+package hwjava06_ì„œìš¸_06ë°˜_ê¹€ì„±ì‹;
 
 public class Product {
-	private String isbn; // Á¦Ç°¹øÈ£
-	private String name; // Á¦Ç°¸í
-	private int price; // °¡°İ
-	private int amount; // Àç°í¼ö·®
+	private String isbn; // ì œí’ˆë²ˆí˜¸
+	private String name; // ì œí’ˆëª…
+	private int price; // ê°€ê²©
+	private int amount; // ì¬ê³ ìˆ˜ëŸ‰
 	
 	public Product() {
 		super();

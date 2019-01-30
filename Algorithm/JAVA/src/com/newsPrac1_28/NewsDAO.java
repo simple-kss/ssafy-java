@@ -31,11 +31,7 @@ public class NewsDAO {
 		// InputStream 해서 받아온다
 		
 		doc = parser.parse(in);
-			
-			
 			// Document doc = parser.parse("xml/member.xml");
-		
-
 	}
 	
 	public List<News> getNewsData() {

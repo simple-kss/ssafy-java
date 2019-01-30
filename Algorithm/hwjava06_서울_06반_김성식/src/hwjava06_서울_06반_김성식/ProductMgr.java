@@ -1,4 +1,4 @@
-package hwjava06_¼­¿ï_06¹İ_±è¼º½Ä;
+package hwjava06_ì„œìš¸_06ë°˜_ê¹€ì„±ì‹;
 
 public class ProductMgr {
 	private Product[] products = new Product[100];
@@ -12,7 +12,7 @@ public class ProductMgr {
 		return products;
 	}
 	
-	// 3. »óÇ° ¹øÈ£·Î »óÇ°À» °Ë»ö
+	// 3. ìƒí’ˆ ë²ˆí˜¸ë¡œ ìƒí’ˆì„ ê²€ìƒ‰
 	public Product[] search(String isbn) {
 		Product[] temp = new Product[100];
 		int tempCnt = 0;
@@ -23,7 +23,7 @@ public class ProductMgr {
 		return temp;
 	}
 	
-	// 4. »óÇ°¸íÀ¸·Î »óÇ°À» °Ë»öÇÏ´Â ±â´É
+	// 4. ìƒí’ˆëª…ìœ¼ë¡œ ìƒí’ˆì„ ê²€ìƒ‰í•˜ëŠ” ê¸°ëŠ¥
 	public Product[] searchName(String name) {
 		Product[] temp = new Product[100];
 		int tempCnt = 0;
@@ -34,7 +34,7 @@ public class ProductMgr {
 		return temp;		
 	}
 	
-	// 5. »óÇ°¹øÈ£¿Í °¡°İÀ» ÀÔ·Â ¹Ş¾Æ »óÇ°°¡°İÀ» º¯°æ
+	// 5. ìƒí’ˆë²ˆí˜¸ì™€ ê°€ê²©ì„ ì…ë ¥ ë°›ì•„ ìƒí’ˆê°€ê²©ì„ ë³€ê²½
 	public void update(String isbn, int price) {
 		for (int i = 0; i < index; i++) {
 			if(products[i].getIsbn().equals(isbn)) 
@@ -42,24 +42,24 @@ public class ProductMgr {
 		}
 	}
 	
-	// 6. »óÇ°¹øÈ£·Î »óÇ°À» »èÁ¦ÇÏ´Â ±â´É
+	// 6. ìƒí’ˆë²ˆí˜¸ë¡œ ìƒí’ˆì„ ì‚­ì œí•˜ëŠ” ê¸°ëŠ¥
 	public void delete(String isbn) {
 		for (int i = 0; i < index; i++) {
-			// ÀÏÄ¡ÇÑ´Ù¸é ¾ÕÀ¸·Î ‹¯±â±â
+			// ì¼ì¹˜í•œë‹¤ë©´ ì•ìœ¼ë¡œ ë–™ê¸°ê¸°
 			if(products[i].getIsbn().equals(isbn)) {
 				
-				// ¶¯±â´Â ÀÛ¾÷
+				// ë•¡ê¸°ëŠ” ì‘ì—…
 				for(int j = i; j < index-1; j++) {
 					products[j] = products[j+1];
 				}
-				i--; // ±× À§Ä¡¸¦ ´Ù½Ã ºñ±³ÇØ¾ßÇÑ´Ù
-				index--; // À¯È¿ÇÑ µ¥ÀÌÅÍ °¹¼ö¸¦ ÇÏ³ª ÁÙÀÎ´Ù.
-				System.out.println("»èÁ¦µÇ¾ú½À´Ï´Ù!");
+				i--; // ê·¸ ìœ„ì¹˜ë¥¼ ë‹¤ì‹œ ë¹„êµí•´ì•¼í•œë‹¤
+				index--; // ìœ íš¨í•œ ë°ì´í„° ê°¯ìˆ˜ë¥¼ í•˜ë‚˜ ì¤„ì¸ë‹¤.
+				System.out.println("ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤!");
 			}
 		}
 	}
 	
-	// 7. ÀüÃ¼ Àç°í »óÇ° ±İ¾×À» ±¸ÇÏ´Â ±â´É
+	// 7. ì „ì²´ ì¬ê³  ìƒí’ˆ ê¸ˆì•¡ì„ êµ¬í•˜ëŠ” ê¸°ëŠ¥
 	public int total() {
 		int sum = 0;
 		for (int i = 0; i < index; i++) {
