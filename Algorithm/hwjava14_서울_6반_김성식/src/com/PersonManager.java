@@ -194,6 +194,10 @@ public class PersonManager implements ActionListener{
 				p.setHp(hp);
 				p.setAddress(address);
 				
+				if(name.equals("") || hp.equals("") || address.equals("")) {
+					sLabel.setText("입력란을 다 채워주세요");
+					return;
+				}
 				try {
 					PersonManager.this.add(p);
 					sLabel.setText("등록 완료!");
@@ -213,7 +217,12 @@ public class PersonManager implements ActionListener{
 				String hp = tfHp.getText();
 
 				//예외처리 필요한 부분
-				PersonManager.this.update(name, hp);
+				try {
+					PersonManager.this.update(name, hp);
+					sLabel.setText("수정 완료!");
+				} catch (NotFoundException e1) {
+					sLabel.setText("해당하는 이름이 존재하지 않습니다");
+				}
 				tfClear();
 			}
 		
@@ -225,7 +234,12 @@ public class PersonManager implements ActionListener{
 			public void actionPerformed(ActionEvent e) {
 				String name = tfName.getText();
 				
-				PersonManager.this.remove(name);
+				try {
+					PersonManager.this.remove(name);
+					sLabel.setText("삭제 완료!");
+				} catch (NotFoundException e1) {
+					sLabel.setText("해당하는 이름이 존재하지 않습니다");
+				}
 				
 				tfClear();
 				
@@ -351,24 +365,27 @@ public class PersonManager implements ActionListener{
 		return tempList;
 	}
 	
-	void update(String inName, String inHp) {
+	void update(String inName, String inHp) throws NotFoundException {
 		for (Person person : list) {
 			if(person.getName().equals(inName)) {
 				person.setHp(inHp);
 				return;
 			}
 		}
-		System.out.println("존재하지 않음");
+		throw new NotFoundException();
 	}
 	
-	void remove(String inName) {
+	void remove(String inName) throws NotFoundException {
+		boolean check = false;
 		Iterator<Person> it = list.iterator();
 		while(it.hasNext()) {
 			Person p = it.next();
 			if(p.getName().equals(inName)) {
 				it.remove();
+				check = true;
 			}
 		}
+		if(check == false) throw new NotFoundException();
 	}
 	
 	void print() {
