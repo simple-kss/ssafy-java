@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package wsjava13_서울_6반_김성식;
+=======
+package wsjava13_����_6��_�輺��;
+>>>>>>> a0ff80c0ea8f52a4e18a3e0ab44006db4bd3b333
 
 import java.awt.Container;
 import java.awt.event.ActionEvent;
@@ -47,8 +51,13 @@ public class WeatherMain {
 	}
 
 	protected void showList() {
+<<<<<<< HEAD
 		// dao한테서 파싱한 결과가 들어 있는 ArrayList 바당오기
 		// 받아온 ArrayListfh ghkaus(JList)에 뿌리기
+=======
+		// dao���׼� �Ľ��� ����� ��� �ִ� ArrayList �ٴ����
+		// �޾ƿ� ArrayListfh ghkaus(JList)�� �Ѹ���
+>>>>>>> a0ff80c0ea8f52a4e18a3e0ab44006db4bd3b333
 		String[] s = new String[] {" ", " "};
 //		li.setListData(s);
 		li.removeAll();
@@ -56,8 +65,13 @@ public class WeatherMain {
 		
 		List<Weather> data = dao.getWeatherData();
 		
+<<<<<<< HEAD
 		// ArrayList를 배열로 바꾼다음에 집어넣어주면
 		// 하나씩 하나씩 꺼내서 list에 한줄씩 보여준다.
+=======
+		// ArrayList�� �迭�� �ٲ۴����� ����־��ָ�
+		// �ϳ��� �ϳ��� ������ list�� ���پ� �����ش�.
+>>>>>>> a0ff80c0ea8f52a4e18a3e0ab44006db4bd3b333
 //		System.out.println(Arrays.toString(data.toArray()));
 		li.setListData(data.toArray());
 	}
