@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Z27_MergesortSS {
 	
 	public static void main(String[] args) {
-		int[] arr = {69, 10, 30, 2, 16, 8, 31, 22}; // 8
+		int[] arr = {69, 10, 30, 2, 16, 8, 31, 22, 1}; // 8
 		// 반쪼갬
 		int[] result;
 		
@@ -40,8 +40,9 @@ public class Z27_MergesortSS {
 		return merge(lArr, rArr);
 	}
 	private static int[] merge(int[] lArr, int[] rArr) {
-		int rlen = lArr.length;
-		int len = lArr.length + rArr.length;
+		int rLen = rArr.length;
+		int lLen = lArr.length;
+		int len = rLen + lLen; // 합할 배열 총 길이
 		int[] result = new int[len];
 		
 		// 제일 첫번쨰 요소랑 비교해서
@@ -52,17 +53,17 @@ public class Z27_MergesortSS {
 		int rCnt = 0;
 		while(reIndex < len ) {
 			// 한쪽이 다 찼을 때
-			if(rCnt == rlen && lCnt < rlen) {
+			if(rCnt == rLen && lCnt < rLen) {
 				result[reIndex++] = lArr[lCnt++];
 			}
-			else if(lCnt == rlen && rCnt < rlen) {
+			else if(lCnt == lLen && rCnt < rLen) {
 				result[reIndex++] = rArr[rCnt++];
-			}
+			} // 오른쪽이 클 때
 			else if(lArr[lCnt] < rArr[rCnt]) {
 				result[reIndex++] = lArr[lCnt];
 				lCnt++;
-			}
-			else if(lCnt == len || lArr[lCnt] >= rArr[rCnt]) {
+			} // 왼쪽이 클 때
+			else if(lArr[lCnt] >= rArr[rCnt]) {
 				result[reIndex++] = rArr[rCnt];
 				rCnt++;
 				// 다도달했으면 상대방꺼 다 집어넣고 끝				
