@@ -60,6 +60,22 @@ public class PersonManager implements ActionListener{
 	JButton bClear;
 	JButton bExit;
 	
+	public PersonManager() {
+		Socket s;
+		try {
+			System.out.println("Server");
+			s = new Socket("127.0.0.1",1055);
+			ObjectInputStream ois = new ObjectInputStream(s.getInputStream());
+			
+			System.out.println("wait");
+			list = (ArrayList<Person>) ois.readObject();
+			System.out.println("complete");
+			
+		} catch (IOException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}	
+	
 	public PersonManager(String _fileName) {
 		fileName = _fileName;
 		try {
@@ -86,7 +102,7 @@ public class PersonManager implements ActionListener{
 		ClientThread() {
 			try {
 				System.out.println("socket want to connect");
-				s = new Socket("70.12.108.99",1055);
+				s = new Socket("127.0.0.1",1055);
 				oos = new ObjectOutputStream(s.getOutputStream());
 				ois = new ObjectInputStream(s.getInputStream());
 				System.out.println("end of socket");
@@ -97,11 +113,12 @@ public class PersonManager implements ActionListener{
 		@Override
 		public void run() {	
 			try {
-				for (Person person : list) {
-					oos.writeObject(person);
-				}
+				oos.writeObject(list);
+//				for (Person person : list) {
+//					oos.writeObject(person);
+//				}
 				oos.close();
-				//s.close();
+				s.close();
 			} catch (IOException e) {
 			}
 		}
@@ -173,10 +190,14 @@ public class PersonManager implements ActionListener{
 		
 		li.setListData(list.toArray());
 		
+		// 리스트 에드리스트셀렉션리스너
+		// 리스트를 선택하는지 안하는지 검사하는 리스너 등록ㄴ
 		li.addListSelectionListener(new ListSelectionListener() {
+			
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
 				Person p = (Person) li.getSelectedValue();
+				if(p == null) return;
 				tfHp.setText(p.getHp());
 			}
 		});
@@ -250,12 +271,9 @@ public class PersonManager implements ActionListener{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				
-//				Person temp = PersonManager.this.select(t);
 				
 				ArrayList<Person> tempList = new ArrayList<Person>();
 				
-//				ta.setText("");
 				String t = tfName.getText();
 				if(t.equals("")) {
 					li.setListData(list.toArray());
@@ -271,6 +289,12 @@ public class PersonManager implements ActionListener{
 				} catch (NotFoundException e1) {
 					sLabel.setText("해당하는 이름이 존재하지 않습니다");
 				}
+				
+				Object[] st = tempList.toArray();
+				for(int i = 0; i < st.length; i ++) {
+					System.out.println(st[i].toString());
+				}
+//				System.out.println(tempList.toArray());
 				li.setListData(tempList.toArray());
 				
 				tfClear();
@@ -387,9 +411,10 @@ public class PersonManager implements ActionListener{
 			FileOutputStream fos = new FileOutputStream(fileName);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			
-			for (Person p: list) {
+			oos.writeObject(list);
+//			for (Person p: list) {
 				oos.writeObject(p);			
-			}
+//			}
 			oos.close();
 			fos.close();
 
@@ -406,9 +431,11 @@ public class PersonManager implements ActionListener{
 		try {
 			FileInputStream fis = new FileInputStream(fileName);
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			for(Person p; ( p = (Person)ois.readObject()) != null ;) {
-				list.add(p);
-			}
+			
+			list = (ArrayList<Person>) ois.readObject();
+//			for(Person p; ( p = (Person)ois.readObject()) != null ;) {
+//				list.add(p);
+//			}
 		} catch (EOFException p) {
 			
 		}
@@ -418,11 +445,11 @@ public class PersonManager implements ActionListener{
 	}
 	
 	public static void main(String[] args) {
-		PersonManager pm = new PersonManager("src/whitePage.dat");
+//		PersonManager pm = new PersonManager("src/whitePage.dat");
+		PersonManager pm = new PersonManager();
 		pm.createGUI();
 		
 	}
-
 }
 
 
