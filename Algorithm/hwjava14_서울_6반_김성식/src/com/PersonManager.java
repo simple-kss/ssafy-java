@@ -303,13 +303,6 @@ public class PersonManager implements ActionListener{
 		frame.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {		
-//				try {
-//					s.close();
-//					ois.close();
-//					oos.close();
-//				} catch (IOException e1) {
-//					e1.printStackTrace();
-//				}
 				frame.dispose();
 			}
 		});
@@ -317,13 +310,6 @@ public class PersonManager implements ActionListener{
 		bExit.addActionListener(new ActionListener() {	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				try {
-//					s.close();
-//					ois.close();
-//					oos.close();
-//				} catch (IOException e1) {
-//					e1.printStackTrace();
-//				}
 				save();
 				frame.dispose();
 			}
