@@ -86,7 +86,7 @@ public class PersonManager implements ActionListener{
 		ClientThread() {
 			try {
 				System.out.println("socket want to connect");
-				s = new Socket("127.0.0.1",1055);
+				s = new Socket("70.12.108.99",1055);
 				oos = new ObjectOutputStream(s.getOutputStream());
 				ois = new ObjectInputStream(s.getInputStream());
 				System.out.println("end of socket");
