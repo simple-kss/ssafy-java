@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1 align="center">Become a Member</h1>
+<hr>
+<form method="post" action="#">
+	<fieldset>
+		<legend>Registration Information</legend>
+		<table align="center">
+			<tr>
+				<td align="right">E-Mail:</td>
+				<td><input name="email" type="email" required="required" autofocus></td>
+			</tr>
+			<tr>
+				<td align="right">Password:</td>
+				<td><input name="pass" type="password"
+					placeholder="At least 6 letters or numbers" required="required"></td>
+			</tr>
+			<tr>
+				<td align="right">Verify Password:</td>
+				<td><input name="passverif" type="password" required="required"></td>
+			</tr>
+		</table>
+	</fieldset>
+
+	<fieldset>
+		<legend>Member Information</legend>
+		<table align="center">
+			<tr>
+				<td align="right">First Name:</td>
+				<td><input type="text" name="fistName" required="required"></td>
+			</tr>
+			<tr>
+				<td align="right">Last Name:</td>
+				<td><input type="text" name="lastName" required="required"></td>
+			</tr>
+			<tr>
+				<td align="right">Address:</td>
+				<td><input type="text" name="address"></td>
+			</tr>
+			<tr>
+				<td align="right">City:</td>
+				<td><input type="text" name="city" required="required"></td>
+			</tr>
+			<tr>
+				<td align="right">State:</td>
+				<td><input type="text" name="state " placeholder="2-character code" required="required"></td>
+			</tr>
+			<tr>
+				<td align="right">ZIP Code:</td>
+				<td><input type="text" name="code" placeholder="5 or 9 digits" required="required"></td>
+			</tr>
+			<tr>
+				<td align="right">Phone Number:</td>
+				<td><input type="text" name="phoneNumber" placeholder="999-999-9999"></td>
+			</tr>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Membership Information</legend>
+		<table align="center">
+			<tr>
+				<td align="right">Membership Type:</td>
+				<td>
+				<select name="car">
+					<option value="1">Junior</option>
+					<option value="2">Senior</option>
+					<option value="3">Junior1</option>
+					<option value="4">Junior2</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td align="right">Starting Date:</td>
+				<td><input type="date" name="date" required="required"></td>
+			</tr>
+			<tr>
+				<td align="right">Tikets for Guests</td>
+				<td><input  type="number"></td>
+			</tr>
+		</table>
+	</fieldset>
+
+	<fieldset>
+		<legend>Submit Your Membership</legend>
+		<input type="submit" value="Submit">
+		<input type="reset" value="Reset Fields">
+	</fieldset>
+</form>
+
+
+
+
+</body>
+</html>
