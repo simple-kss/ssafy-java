@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function process(that) {
+		// 눌러진 링크의 내용을 알아와서 alert로 표시하기
+		let id = that.id;
+		let val1 = id.substring(0, 5); // 0 ~ 4 (우편번호 추출)
+		let val2 = id.substring(5); // 5부터 끝까지 다 
+		
+		// 이 문서 안에는 value1과 value2가 없다.
+		// 이 창을 열어분 본래 창에서 찾아야한다.
+		
+		let value1 = opener.document.getElementById('value1');
+		let value2 = opener.document.getElementById('value2');
+		
+		value1.value = val1;
+		value2.value = val2;
+		
+		close();
+	}
+
+</script>
+</head>
+<body>
+<h1>find Data</h1>
+<!-- this를 보내면 a태그 전체가 this가 된다 -->
+<a href="#" id="12345서울시 강남구 역삼1동" onclick="process(this)">12345 서울시 강남구 역삼1동</a><br>
+<a href="#" id="13579서울시 종로구 종로1동" onclick="process(this)">13579 서울시 종로구 종로1동</a><br>
+<a href="#" id="17788서울시 영등포구 여의도동" onclick="process(this)">17788 서울시 영등포구 여의도동</a><br>
+
+
+</body>
+</html>

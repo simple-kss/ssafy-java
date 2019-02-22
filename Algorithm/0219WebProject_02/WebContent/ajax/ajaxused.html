@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+/* 		$(':button:first').click(function(){ */ /* 이렇게 해도 됨 */
+		$('#get').click(function(){
+			//server로 ajax요청 보내기
+			$.ajax({
+				// 어디 서버에게 요청보낼거니
+				url: 'sample.jsp', // 여기에 요청을 해야 하고
+				success: function(result, status, xhr){
+					// 비워있으면 val로 해야함, val()는 getter임
+					$('#result').val(result);
+/* 					$('#result').val(xhr.responseText); 이렇게 해도됨*/
+				}, // 서버에서 데이턱 왔고 성공적으로 왔다면
+				error: function(xhr, status, error){ // 서버로부터 결과가 실패하면
+					$('#result').val(result);
+				}
+			});
+		});
+	});
+	
+</script>
+</head>
+<body>
+
+<input type="button" value="get data" id="get">
+<input type="button" value="post data">
+<textarea row="5" id="result">
+
+</textarea>
+
+
+
+</body>
+</html>

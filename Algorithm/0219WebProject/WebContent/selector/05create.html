@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">	
+	$(document).ready(function() {
+		$('button:first').click(function() {
+			//jquery에서 엘리먼트 생성
+			let h1 = $('<h1>hello</h1>');
+		
+			$('#here').append(h1);
+			
+			
+/* 			let img = $('<img/>'); // <img></img><img src="">
+			img.attr('src', '../img/angelina.jpg');
+			img.appentTo('#there'); */
+			
+			let img2 = $('<img/>', {
+				src:'../img/blackWidow.png',
+				width: '200px',
+				height: '300px'
+			});
+			img2.appendTo('#there');
+		});
+	});
+			
+
+
+</script>
+</head>
+<body>
+	<button>create</button>	
+	<div id="here"></div>
+	<div id="there"></div>
+</body>
+</html>

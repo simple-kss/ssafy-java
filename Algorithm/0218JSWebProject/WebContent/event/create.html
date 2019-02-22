@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#result{
+		width: 500px;
+		height: 300px;
+		border: 2px solid blue;
+		overflow: auto; /* div만의 내용물이 넘치면 자동으로 스크롤바가 생기도록 지정 */
+	}
+
+</style>
+<script type="text/javascript">
+	var cnt = 0;
+	function create() {
+		//<h1>hello</h1> 를 생성한 후 div안에 붙이기
+		//우리는 직접 노드를 생성해서 div에 붙이고 싶다!
+		
+		let h1 = document.createElement("h1"); // h1를 생성한다. 
+		let txt = document.createTextNode("hello-" + ++cnt); // hello-1을 붙인다.
+		// h1의 자식으로 txt로 들어가야한다.
+		h1.appendChild(txt); // <h1>hello-1</h1> 이렇게 된다.
+		
+		h1.setAttribute('onclick','del(this)');
+		
+		// div를 찾아내고 div안의 태그에다가 넣어야함
+		let result = document.getElementById("result"); // div 찾아냄
+		result.appendChild(h1);
+		
+		
+		//<p>welcome</p> 를 추가해보자
+		
+		let p = document.createElement("p");
+		let txtA = document.createTextNode("welcome");
+		
+		p.appendChild(txtA);
+		result.appendChild(p);
+		
+		// 이젠 태그를 클릭할 때 삭제하게 해보자.
+		
+		// 노드삭제하기 ! 근데 삭제하려면 removeChild메서드를 호출해야함
+		// A.removeChild(B) A 노드의 자식 노드인 B 노드를 삭제
+		// 그럴려면 div를 알아내야한다.
+		// onclick하면 del함수를 호출하는데
+		// del함수 안에다가 this(자기자신의 태그)를 매개변수로 전달한다.
+		
+		//childNodes - 자식 노드들 반환
+		//firstChild - 첫 번째 자식 노드
+		//lastChild - 마지막 자식 노드
+		//parentNode - 부모노드
+		
+	}
+	
+	function del(that) {
+		// 부모알아내고
+		let parent = that.parentNode;
+		parent.removeChild(that); // 부모에게서 removeChild 해달라고 요청
+		
+		
+/* 		let grandParent = parent.parentNode; 이렇게 하니까 그냥 div가 통쨰로 삭제돼버림 ㅎ
+		grandParent.removeChild(parent); */
+	}
+
+</script>
+
+
+</head>
+<body>
+<h1>DOM Create</h1>
+<input type="button" value="create" onclick="create()">
+<hr>
+<div id="result"> </div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+	body {
+		width: 940px;
+		margin: 0px auto;
+	}
+	
+	header {
+		height : 100px;
+		width: 940px;
+		background-color: black;
+		font-size: 25px;
+		text-align: center;
+		color : white;
+	}
+	
+	footer {
+		height : 100px;
+		width: 940px;
+		background-color: orange;
+		font-size: 25px;
+		text-align: center;
+		color : white;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	function del(x) {
+		// console.log(x);
+		// 이제 0을 들어오는 인자로 바꾸어야한다.
+		
+		let tag = "#tr" + x;
+		console.log("tag");
+		console.log(tag);
+		
+		$(tag).remove(); // css 쪽에서 삭제 처리 완료
+		delete localStorage[x];
+		let total = 3000 * localStorage.length;
+		$('#total').text(total);
+	}
+
+	
+	$(document).ready(function(){
+		console.log(localStorage.length);
+
+		for(let i = 0; i < localStorage.length; i++) {
+			let key = localStorage.key(i); // key
+			let value = new Array();
+			value = JSON.parse(localStorage[key]); // value
+			// console.log(key);
+			// console.log(value);
+			// console.log(value[0]);
+			//for(let j = 0; j < value.length; j++ ) {
+				//let temp = value[j];
+			//}
+			
+			let src = '<img height=200px width=200px src=../img/' + value[0] + '>';
+			let tag = '<tr id="tr' + key + '"><td>' + src + '</td><td>' + value[1] +
+			'</td><td>' + value[2] + '</td><td>' + value[3] + "</td><td><button onclick='del(\"" + key + "\")'>삭제</button></td></tr>";
+			console.log(tag);
+			let tr = $(tag);
+			
+			$('#content').append(tr);
+		}
+		
+		$('table').on('click','button',del);
+		
+		let total = 3000 * localStorage.length;
+		$('#total').text(total);
+		
+	});
+	
+	//del(111);
+
+	
+
+</script>
+</head>
+<body>
+
+<header>
+	찜리스트
+</header>
+<section>
+<table>
+	<tbody id="content">
+		<td>이미지</td><td>상품번호</td><td>상품이름</td><td>가격</td><td>삭제</td>
+	
+	</tbody>
+	
+
+</table>
+</section>
+
+<footer>
+주문가격:<span id="total"></span>
+</footer>
+<a href='#'>주문하러 가기</a>  <a href='#'>DVD 목록</a>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function () {
+		$('#b1').click(function () {
+			$('#p1').text('<h1>hello p</h1>'); //선택한 대상에 텍스트 setting (태그 적용x)
+		});
+		
+		$('#b2').click(function() {
+			$('#p2').html('<h1>hello p</h1>'); //실제 태그 적용
+		});
+		
+		$('#b3').click(function() {
+			$('#message').val('Dolly Duck!'); //입력이 가능한 태그에 값을 setting 할 때
+		});
+		
+		$('#b4').click(function() {
+			var msg = $('#p1').text()+'\n'
+					 +$('#p2').html()+'\n'
+					 +$('#message').val();
+			 alert(msg);
+		});
+	});
+</script>
+</head>
+<body>
+
+	<button id="b1">set text</button>
+	<button id="b2">set html</button>
+	<button id="b3">set value</button>
+	<button id="b4">get value</button>
+	<hr>
+	<p id="p1">this is orange p </p>
+	<p id="p2">this is yellow p </p>
+	
+	<input type="text" id="message" value="mickey">
+	
+</body>
+</html>

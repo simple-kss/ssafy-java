@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function () {
+		//id가 없으니까 : 사용
+		$(':text').val('hello'); //jquery에서는 vlaue 대신 val 사용함.(setter 효과)
+		$(':password').css('border','3px solid red').css('background-color','green'); //메소드 체이닝
+		$(':button').css('background-color','pink');
+		$(':file').css('border','2px solid blue');
+		$('[href]').css('text-decoration', 'none').css('color','red')
+		
+		$('ul li').css('color','magenta');
+		
+	});
+
+
+</script>
+</head>
+<body>
+	<input type="text"><br>
+	<input type="password"><br>
+	<input type="button" value="hello"><br>
+	<input type="file"><br>
+	<a href="#">gogo</a>
+	<hr>
+	<div>
+		<ul>
+			<li>seattle</li>
+			<li>jeju</li>
+			<li>seoul</li>
+		</ul>
+		
+		<ul>
+			<li>coffee</li>
+			<li>black tee</li>
+			<li>ginger milk</li>
+			<li>orange juice</li>
+		</ul>
+	</div>
+</body>
+</html>

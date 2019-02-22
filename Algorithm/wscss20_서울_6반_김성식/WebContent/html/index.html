@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>자기소개서</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="layout2.css" type="text/css" media="screen" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">	
+		$(document).ready(function() {
+			
+			$('#pre1').click(function() {
+				$('#preveiew').attr('src','../media/KungFuPanda_Sample.mp4'); //실제 태그 적용
+			});
+			
+			$('#pre2').click(function() {
+				$('#preveiew').attr('src','../media/avengers.mp4'); //실제 태그 적용
+			});
+			
+			$('#pre3').click(function() {
+				$('#preveiew').attr('src','../media/BigBuck.theora.mp4'); //실제 태그 적용
+			});
+			
+			$('#cart1').click(function() {
+				// 데이터 추가
+				let arr = [
+					'movie_image2.jpg',
+					'1001',
+					'쿵푸팬더',
+					'3000'
+				];
+				
+				localStorage.setItem("0", JSON.stringify(arr)); 
+			});
+			
+			$('#cart2').click(function() {
+				// 데이터 추가
+				let arr = [
+					'TheAvengers2012Poster.jpg',
+					'1002',
+					'어벤져스',
+					'3000'
+				];
+				
+				localStorage.setItem("1", JSON.stringify(arr));
+			});
+			
+			$('#cart3').click(function() {
+				// 데이터 추가
+				let arr = [
+					'poster.jpg',
+					'1003',
+					'빅벅',
+					'3000'
+				];
+				
+				localStorage.setItem("2", JSON.stringify(arr));
+				
+			});
+			
+		});
+		
+	</script>
+				
+	
+    <style>
+    
+    #mainContent {
+    	width: 100%;
+    }
+    
+    .subContent {
+    	display: inline-block;
+    	width : 450px;
+    
+    }
+    .element {
+    	display: inline-block;
+    }
+    
+    
+    img {
+    	width: 130px;
+    	height: 200px;
+    
+    }
+    
+    </style>
+</head>
+<body>
+    <header>
+        <h1>자기 소개서</h1>
+    </header>
+    <nav class="menubar">
+        <ul>
+            <li class="#"><a href="#">최신 DVD</a>
+		    </li>
+            <li><a href="#">DVD 목록</a>
+		    </li>
+            <li><a href="list.html">찜 리스트</a>
+		    </li>
+<!--             <li><a href="#">이벤트</a></li> -->
+<!--             <li class="#"><a href="#">상영영화소개.RSS</a></li> -->
+        </ul>
+    </nav>
+    <section id="intro">
+        <header>
+            <h2>무공해 힐링 시네마</h2>
+        </header>
+        <p>무공해 힐링 시네마는 새로운 개념의 영화장르의 한가지를 말하는 것입니다. 지친 영혼을 위한 휴식을 주는 영화나,
+            마음을 정화시키고 치유하는 힘을 가진 영화들 ... .</p>
+        <img alt="#" src="../img/movie_image.jpg"> <br> -->
+    </section>
+    <div id="content">
+        <div id="mainContent">
+			<div class="subContent">
+				<video id="preveiew" src="../media/avengers.mp4" width="240" height="160"
+					controls="controls"></video>
+			</div>
+			<div class="subContent">
+				<div class="element">
+					<h1>쿵푸 팬더</h1>
+					<img src="../img/movie_image2.jpg"><br>
+					<button id="pre1">미리보기</button>
+					<button id="cart1">찜하기</button>
+				</div>
+
+				<div class="element">
+					<h1>어벤져스</h1>
+					<img src="../img/TheAvengers2012Poster.jpg"><br>
+					<button id="pre2">미리보기</button>
+					<button id="cart2">찜하기</button>
+				</div>
+
+				<div class="element">
+					<h1>빅벅</h1>
+					<img src="../img/poster.jpg"><br>
+					<button id="pre3">미리보기</button>
+					<button id="cart3">찜하기</button>
+				</div>
+
+			</div>
+		</div> <!-- end of div -->
+    </div>
+    <footer>
+        <div>
+            <section id="about">
+                <h3>About</h3>
+                <p>
+                    서울 강남 역상 멀티캠퍼스. <br /> <a href="#">ssafy@ssafy.com</a>
+                </p>
+            </section>
+            <section id="security">
+                <h3>개인정보 취급 방침</h3>
+                <ul>
+                    <li><a href="#">개요</a></li>
+                    <li><a href="#">문의처</a></li>
+                </ul>
+            </section>
+            <section id="notice">
+                <h3>공지사항</h3>
+                <ul>
+                    <li><a href="#">오시는 길</a></li>
+                    <li><a href="#">오류시 문의사항</a></li>
+                </ul>
+            </section>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	
+		$(':button:first').click(function(){  /* 이렇게 해도 됨 */
+			//server로 ajax요청 보내기
+			$.ajax({
+				url:'parameterProcess.jsp',
+				success: function(result){ // callback 함수
+					$('div').html('<h1>' + result + '</h1>');
+				},
+				data:{ // server로 보낼 데이터
+					// 얘는 getter
+					id: $('#id').val(),
+					pass: $('#pass').val()
+				} 
+			});
+		});
+	});
+
+</script>
+</head>
+<body>
+    <h1>ajax parameter test</h1>
+    id:<input type="text" id="id"><br>
+    pass:<input type="password" id="pass"><br>
+    <input type="button" value="processGet" onclick="processGet()" >
+    <input type="button" value="processPost" onclick="processPost()" >
+    <hr>
+    
+    <div id = "result"></div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var xhr = null;
+
+	// ajax 통신에 필요한 XHR객체 생성
+	function getXHR() {
+		xhr = new XMLHttpRequest();
+	}
+	// server에 ajax 요청
+	function getAddress() {
+		getXHR(); // xhr.readyState == 0
+		var name = document.getElementById('name');
+		var params = "?name=" + name.value;
+		xhr.open('get', 'addressTest.jsp' + params, true); // 요청준비, true : 비동기 방식 요청  //xhr.readyState == 1
+		xhr.onreadystatechange = callback; // ReadyState값이 바뀔때마다 호출할 콜백 함수 지정
+		xhr.send(null); // 요청 //xhr.readyState == 2
+		// 서버로부터 데이터를 전송 받는중 // xhr.readyState == 3
+		// 서버의 응답 완료 // xhr.readyState == 4
+	}
+	// 응답 도착 후 처리함수
+	function callback() {
+		var result = document.getElementById('address');
+		if (xhr.readyState == 4 && xhr.status == 200) { //xhr.status == 200 : 정상 응답 완료
+			// div에 내용 넣을 때는 value x, innerHTML로 넣어야 함
+			result.value = xhr.responseText;
+			name.value = '';
+		}
+	}
+</script>
+</head>
+<body>
+<h1>ajax param test</h1>
+	이름:
+	<input type="text" id="name" onblur="getAddress()">
+	<br> 주소:
+	<input type="text" id="address">
+</body>
+</html>

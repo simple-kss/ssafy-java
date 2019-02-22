@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// 사건 발생 시에 처리할 내용....
+
+function test() {
+	alert("click..!!");
+}
+
+/*
+ *	open
+ *	
+ */
+function process(code) {
+	if(code == 1) {
+		// 2번쨰 인자는 이름인데 쓰이는 곳이 없음
+		open("http://www.daum.net","","width=300px height=300px scrollbars=yes"); // popup창
+	}
+	else if(code == 2) {
+		print(); // 인쇄창 뜨게이함
+	}
+	else {
+		close(); // 현재 페이지 닫음
+	}
+	
+}
+
+</script>
+</head>
+<body>
+
+	<input type="button" value="click" onclick="test()">
+	<input type="button" value="mouseOver" onmouseover="alert('gogo')">
+	<input type="button" value="open" onclick="process(1)">
+	<input type="button" value="print" onclick="process(2)">
+	<input type="button" value="close" onclick="process(3)">
+	<hr>
+	
+	<input type="radio" onclick="alert('동의하지않습니다');">약관에 동의하지 않습니다.
+	<input type="radio" onclick="alert('동의합니다');">약관에 동의합니다.
+	
+
+
+</body>
+</html>

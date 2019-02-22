@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+	.circle {
+		display : inline-block;
+		background-color:yellow;
+		width:30px;
+		height:30px;
+		border-radius:30px;
+		
+		text-align:center;
+		vertical-align: middle;
+		
+		margin: 5px;
+		
+		font-size:12px;
+		line-height:30px;
+	}
+
+	div{
+		text-align: center;
+		width : 300px;
+		height : 80px;
+		background-color: skyblue;
+	}
+</style>
+
+<script type="text/javascript">
+
+	lotto = new Array(6);
+	
+	function GetLotto() {
+		let count = 0;
+		let flag = true;
+
+		while (count < 6) {
+			let number;
+			number = parseInt(Math.random() * 45) + 1
+
+			for (let i = 0; i < count; i++)
+				if (lotto[i] == number) flag = false;
+			if (flag) {
+				lotto[count] = number;
+				count++;
+			}
+			flag = true;
+
+		}
+	}
+	GetLotto();
+	
+	let cnt = 0;
+	
+	// 1초씩 소환한다.
+	setInt = setInterval("oneView(cnt++)", 1000);
+	
+	// 하나씩 보여주는 함수
+	function oneView(cnt) {
+		if(cnt == 6) {
+			clearInterval(setInt);
+			return;
+		}
+		// 이제 찍는건
+		let div = document.createElement("div"); // div를 생성한다. 
+		let txt = document.createTextNode(lotto[cnt]); // lotto번호를 텍스트에 붙인다.
+		
+		// div의 자식으로 txt로 들어가야한다.
+		div.appendChild(txt); // <div> 숫자 </div> 이렇게 된다.
+		div.setAttribute('class','circle');
+		// div를 찾아내고 div안의 태그에다가 넣어야함
+		let result = document.getElementById("result"); // div 찾아냄
+		result.appendChild(div);
+		
+	}
+</script>
+
+</head>
+<body>
+	<p>대박을 기원합니다~~~</p>
+	<div id="result">
+	</div>
+
+</body>
+</html>

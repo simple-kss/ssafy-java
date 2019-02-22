@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// 자바스크립트에서는 함수도 하나의 데이터 타입으로 인식됨.
+// 다른 함수의 파라메터나 리턴값으로 사용 가능 !
+
+function go() {
+	document.write("hello<br>");
+}
+
+var stop = function() {
+	document.write("bye<br>");
+}
+
+//함수가 파라메터로 전달됨
+function sometest(some) {
+	some();
+}
+
+function test() {
+	return function() {
+		document.write("gogo<br>");
+	}
+}
+
+sometest(go);
+sometest(stop);
+
+for(let i = 0; i < 5; i++) {
+	alert(i);
+}
+
+alert("ㅎ2");
+
+var result = test();
+result();
+
+test()();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

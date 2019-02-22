@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	//jquery를 사용해서 사용자가 코드 작성하는 부분
+	
+	//document(html 문서)가 준비된 후(브라우저에 로딩이 완료된 후를 의미)에 jquery를 실행하겠다는 의미
+	$(document).ready( function name() {
+		//준비가 된후에 할일
+		$('h1').css('color', 'green'); //h1 태그를 찾아서 글자색 green
+		$('h2').css('color', 'blue');
+		$('h1').css('font-size','30pt') //태그 이름을 선택자로 사용
+		
+		$('.red').css('color', 'red'); //.class
+		$('#pink').css('color','pink'); //#id
+		$('p').css({'background-color':'yellow', 'font-family':'consolas'}); //{} :json 형식 사용
+		
+		
+		
+	}
+			
+	);
+	
+
+</script>
+</head>
+<body>
+	<h1>this is first h1</h1>
+	<h1>this is second h1</h1>
+	
+	<h2>tommy lee</h2>
+	<h2>janes deen</h2>
+	<h2>billy</h2>
+	
+	<h1 class='red'>this is red h1</h1>
+	<h1 id='pink'> this is pink h1</h1>
+	<p> this is p </p>
+</body>
+</html>

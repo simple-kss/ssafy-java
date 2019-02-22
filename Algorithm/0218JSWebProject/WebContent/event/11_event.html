@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function check() {
+		//1.id, pass칸의 값을 알아오기
+		let id = document.getElementById("id");
+		let pass = document.getElementById("pass");
+		let idvalue = id.value;
+		let passvalue = pass.value;
+		
+		// var idval = document.getElementById("id").value;
+		
+		alert(idvalue);
+		alert(passvalue);
+		if(idvalue == "" || passvalue == "" ) {
+			alert("둘중에 하나가 비어있습니다!");
+		}
+		
+		// form 값이 정상이면 submit 하기 -> 문서안에서 form을 알아낸 후 전송
+		// form한테도 id를 알려줘야함
+		var f = document.getElementById("f");
+		f.action = "other.html";
+		f.method = "get";
+		f.submit();
+		
+	}
+
+
+</script>
+
+</head>
+<body>
+<h1>Login</h1>
+<form method="post" action="welcome.html" id="f">
+	ID:<input type="text" name="id" id="id"><br>
+	PASS:<input type="password" name="pass" id="pass"><br>
+	<input type="button" value="로그인" onclick="check()">
+</form>
+
+
+</body>
+</html>

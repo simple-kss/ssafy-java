@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	margin : 0 auto;
+	width: 940px;
+}
+
+</style>
+</head>
+
+<body>
+<h1>영화 예매</h1>
+<h2>쿵푸팬더</h2>
+<img src="../img/movie_image2.jpg">
+
+<form method="get" action="test.jsp">
+
+상영관 선택
+<select name="car">
+	<option value="1">CGV</option>
+	<option value="2">롯데시네마</option>
+	<option value="3">메가박스</option>
+</select>
+날짜 선택<input type="date"><br>
+
+<!-- label로 하니까 글자만 눌러도 선택이 됨 -->
+<fieldset>
+<legend>시간 선택 </legend>
+	<label><input type="radio" name="hobby"> 08:30</label>
+	<label><input type="radio" name="hobby"> 11:00</label>
+	<label><input type="radio" name="hobby"> 14:20</label>
+	<label><input type="radio" name="hobby"> 17:25</label>
+	<label><input type="radio" name="hobby"> 20:10</label>
+	<label><input type="radio" name="hobby"> 23:05</label>
+
+</fieldset>
+
+<!-- HTML5부터 나옴 color, date -->
+<br>
+요금 <strike>\9,000</strike> <u>\5,000</u>
+<br>
+인원 <input type="text" name="hobby" value=0>
+<br>
+금액 <input type="text" name="hobby" value=0>
+<br>
+
+<input type="checkbox" name="hobby"> 옵션
+
+<fieldset>
+	<input type="checkbox" name="hobby"> 팝콘
+	<input type="checkbox" name="hobby"> 콜라
+</fieldset>
+
+</form>
+
+
+</body>
+</html>

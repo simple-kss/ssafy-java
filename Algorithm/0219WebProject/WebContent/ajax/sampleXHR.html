@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	var xhr = null;
+	
+	//ajax 통신에 필요한 XHR 객체 생성
+	function getXHR() {
+		xhr = new XMLHttpRequest();
+	}
+	
+	//server에 ajax 요청
+	function getData() {
+		getXHR();
+		xhr.open('get', 'sample.jsp', true); //요청 준비, true면 비동기
+		// 1-1 그런데 callbackd은 state가 바뀔떄마다 실행한다 
+		xhr.onreadystatechange = callback; //readystate  값이 바뀔떄마다 호출할 콜백 함수 지정
+		xhr.send(null); //요청
+	}
+	
+	function postData() {
+		getXHR(); //xhr 객체 생성 (readystate : 0)
+		xhr.open('get', 'sample.jsp', true); //요청 준비 (readystate : 1)
+		xhr.onreadystatechange = callback; //readystate 값이 바뀔떄마다 호출할 콜백 함수 지정
+		xhr.send(); //요청 (get방식일땐 send(null)), (readystate : 2)
+	}
+  
+	
+	//응답 도착후 처리 함수
+	function callback() {
+		var result = document.getElementById('result');
+		// 근데 1-2 (4)즉 서버응답이 완료된 상태일때만 바뀌게 조건문을 달아놓았다.
+		if(xhr.readyState == 4 && xhr.status == 200){
+			result.value = xhr.responseText;
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>ajax test</h1>
+	<input type="button" value="get data" onclick="getData()">
+	<input type="button" value="post data" onclick="postData()">
+	
+	<hr>
+	<textarea id="result" rows="5" cols="80"></textarea>
+</body>
+</html>

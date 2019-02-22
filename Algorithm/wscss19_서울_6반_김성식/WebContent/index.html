@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// 처음에 금액 계산
+		let cash = $('#num').val();
+		if($('#8').is(":checked")) {
+			$('#total').val( cash * 5000);
+		}
+		else {
+			$('#total').val( cash * 9000);
+		}
+			
+		// 처음에 음료선택하는 fieldset 감춘다.
+		$('#bever').hide();
+		$('#another').change(function() {
+			if($("#another").is(":checked")) {
+				$('#bever').show();
+			}
+			else{
+				$('#bever').hide();
+			}
+		});
+		
+		// 인원수 변경했을 떄 마다 재계산해야함
+		$('#num').click(function() {
+			
+			let cash = $('#num').val();
+			console.log(cash);
+			if($('#8').is(":checked")) {
+				$('#total').val( cash * 5000);
+			}
+			else {
+				$('#total').val( cash * 9000);
+			}
+		});
+		
+		// radio type들이 바뀌었을 떄
+		$(':radio').change(function() {
+			console.log("123");
+			let cash = $('#num').val();
+			if($('#8').is(":checked")) {
+				$('#total').val( cash * 5000);
+				$('#money').html('<strike>\\9,000</strike> <u>\\5,000</u>'); //실제 태그 적용
+			}
+			else {
+				$('#total').val( cash * 9000);
+				$('#money').html('<u>\\9,000</u> <strike>\\5,000</strike>'); //실제 태그 적용
+			}
+		});
+	});
+
+</script>
+<style>
+body {
+	margin : 0 auto;
+	width: 940px;
+}
+
+</style>
+</head>
+
+<body>
+<h1>영화 예매</h1>
+<h2>쿵푸팬더</h2>
+
+<form method="get" action="test.jsp">
+
+상영관 선택
+<select name="car">
+	<option value="1">CGV</option>
+	<option value="2">롯데시네마</option>
+	<option value="3">메가박스</option>
+</select>
+날짜 선택<input type="date"><br>
+
+<!-- label로 하니까 글자만 눌러도 선택이 됨 -->
+<fieldset>
+<legend>시간 선택 </legend>
+	<label><input id="8" type="radio" name="hobby" > 08:30</label>
+	<label><input id="11" type="radio" name="hobby" checked = "true"> 11:00</label>
+	<label><input id="14" type="radio" name="hobby"> 14:20</label>
+	<label><input id="17" type="radio" name="hobby"> 17:25</label>
+	<label><input id="20" type="radio" name="hobby"> 20:10</label>
+	<label><input id="23" type="radio" name="hobby"> 23:05</label>
+
+</fieldset>
+
+<!-- HTML5부터 나옴 color, date -->
+<br>
+요금 <p id="money"><strike>\9,000</strike> <u>\5,000</u></p>
+<br>
+인원 <input id="num" type="number" name="hobby" value=1>
+<br>
+금액 <input id="total" type="text" name="hobby" value=0>
+<br>
+
+<input id="another" type="checkbox" name="hobby" > 추가
+
+<fieldset id="bever" >
+	<legend> 옵션 </legend>
+	<input type="checkbox" name="hobby"> 팝콘
+	<input type="checkbox" name="hobby"> 콜라
+</fieldset>
+
+</form>
+
+
+</body>
+</html>
