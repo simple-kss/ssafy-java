@@ -59,7 +59,6 @@ public class SuffixArray_서민규_정답 {
 		}
 		
 		// s 문자열의 정렬된 모든 접미사의 모든 접두사를 생성
-		
 		int[] LCP = new int[s.length()]; // 최장공통접두어를 저장할 배열
 //		LCP[4] = s.substring(sa[3]); 과 s.substring(sa[4]) 의 최장공통접두어의 개수 이다 !
 		for(int i = 1; i < LCP.length; i++) {
@@ -79,7 +78,6 @@ public class SuffixArray_서민규_정답 {
 		
 		
 		// 출력
-
 		for(int i = 0; i < sa.length; i++) {
 			String str = s.substring(sa[i]);
 			System.out.println("<" + str + ">");
@@ -107,11 +105,7 @@ public class SuffixArray_서민규_정답 {
 				System.out.println(k + "번째 문자열 : " + str.substring(0, LCP[i] + index ));
 				break;
 			}
-			
-			
 		}
-
-		
 		
 
 	} // end of main
