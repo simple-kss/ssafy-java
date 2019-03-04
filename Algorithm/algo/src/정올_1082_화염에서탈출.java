@@ -7,6 +7,8 @@ import java.util.StringTokenizer;
 public class 정올_1082_화염에서탈출 {
 	static int R;
 	static int C;
+	static int[][] visited;
+	static int[][] visitedP;
 	
 	static int[][] dir = {
 			{-1, 0}, // 북
@@ -16,8 +18,6 @@ public class 정올_1082_화염에서탈출 {
 	};
 	
 	public static void main(String[] args) throws IOException {
-		System.out.println(" ");
-		
 		// 큐 2개생성
 		// bfs로 불 먼저 지피고
 		// S가 D를 찾기위해 bfs
@@ -31,94 +31,83 @@ public class 정올_1082_화염에서탈출 {
 		R = Integer.parseInt(stk.nextToken());
 		C = Integer.parseInt(stk.nextToken());
 		char[][] map = new char[R+2][C+2];
-		int[][] visited = new int[R+2][C+2];
+		visited = new int[R+2][C+2];
+		visitedP = new int[R+2][C+2];
 		
 		Poi F = null;
 		Poi D = null;
 		Poi S = null;
-		
+	
 		for(int i = 1; i <= R; i++) {
 			String s = br.readLine();
 			int cnt = 0;
 			for(int j = 1; j <= C; j++) {
 				map[i][j] = s.charAt(cnt++);
 				if(map[i][j] == '*') {
-					fq.add(new Poi(i,j,0));
+					fq.add(new Poi(i,j,0)); // fire 다 que에 담음
 				}
 				else if(map[i][j] == 'S') {
-					S = new Poi(i,j,0);
+					sq.add(new Poi(i,j,0));
 				}
 				else if(map[i][j] == 'D') {
 					D = new Poi(i,j,0);
 				}
 			}
-		} // 입력 끝
+		} //W 입력 끝
 		
 		// bfs로 *부터 하고
 		// 처음 *가 갈수 있는대를 다 지펴버리자
-		
-		// --- 초기설정부분!
-//		for(int i = 0; i < 4; i++) {
-//			int tR = F.r + dir[i][0];
-//			int tC = F.c + dir[i][1];
-//			if(map[tR][tC] == '.') {
-//				fq.add(new Poi(tR, tC, 0));
-//				visited[tR][tC] = 2; // fire
-//				map[tR][tC] = '*';
-//			}
-//		}
-		
-		for(int i = 0; i < 4; i++) {
-			int tR = S.r + dir[i][0];
-			int tC = S.c + dir[i][1];
-			if(map[tR][tC] == '.') {
-				sq.add(new Poi(tR, tC, 1));
-				visited[tR][tC] = 1; // person
-			}
-		}
-		
+
 		boolean isGoOut = false;
 		int step = 0;
 		
-		// 비어있지 않을떄까지 무한반복!!
+		// 불 번지고
 loop:	while(!sq.isEmpty()) {
-
+			int fCnt = fq.size();
+			// 그 레벨의 갯수만 큼 반복
+			for(int z = 0; z < fCnt; z++) {
+				// 불 먼저 지피자 그 것만큼
+				Poi fir = fq.poll();
+				
+				// 같은레벨 다 불지펴버리자!!!!
+				// 큐에다가 담기도하고!
+				for(int i = 0; i < 4; i++) {
+					int tR = fir.r + dir[i][0];
+					int tC = fir.c + dir[i][1];
+					if(map[tR][tC] == '.' && visited[tR][tC] != 2) {
+						fq.add(new Poi(tR, tC, fir.val + 1));
+						visited[tR][tC] = 2; // fire
+						map[tR][tC] = '*';
+					}
+				} // end of 4
+			} // end of for
 			
-			// 하나꺼내서 갈수있으면 간다.
-			Poi root = sq.poll();
 			
-			// 자기 위치가 불이 아닐떄만 자기 주변에 담는다.
-			if(map[root.r][root.c] != '*' ) {
+			int pCnt = sq.size();
+			
+			for(int z = 0; z < pCnt; z++) {
+				// 자기 위치가 불이 아닐떄만 자기 주변에 담는다.
+				Poi root = sq.poll();
+				
+				// 자기가 위치가 *이 아닐대만 해야한다.
 				for(int i = 0; i < 4; i++) {
 					int tR = root.r + dir[i][0];
 					int tC = root.c + dir[i][1];
-					if(map[tR][tC] == '.' && visited[tR][tC] != 1) {
+					if(map[tR][tC] == '.' && visitedP[tR][tC] != 1) {
 						sq.add(new Poi(tR, tC, root.val + 1));
-						visited[tR][tC] = 1; // person
+						visitedP[tR][tC] = 1; // person
 					}
 					if(tR == D.r && tC == D.c) {
 						step = root.val + 1;
 						isGoOut = true;
 						break loop;
 					}
-				}
-			}
+				} // end of 4
+			} // end of for
 			
-			// 불하나 꺼내서서 퍼뜨린다.
-			Poi fir = fq.poll();
+			for(int i = 0; )
 			
-			for(int i = 0; i < 4; i++) {
-				int tR = fir.r + dir[i][0];
-				int tC = fir.c + dir[i][1];
-				if(map[tR][tC] == '.' && visited[tR][tC] != 2) {
-					fq.add(new Poi(tR, tC, 0));
-					visited[tR][tC] = 2; // fire
-					map[tR][tC] = '*';
-				}
-			}
-		}
-		
-		// 그리고 S가 D를 찾을때까지
+		} // end of while
 		if(!isGoOut) {
 			System.out.println("impossible");
 		}
@@ -127,14 +116,9 @@ loop:	while(!sq.isEmpty()) {
 		}
 		
 
-		
-
 	} // end of main
+}
 
-	
-	
-	
-} // end of class
 
 class Poi {
 	int r;
