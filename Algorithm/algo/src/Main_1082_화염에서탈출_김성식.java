@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.StringTokenizer;
 
-public class 정올_1082_화염에서탈출 {
+public class Main_1082_화염에서탈출_김성식 {
 	static int R;
 	static int C;
 	static int[][] visited;
@@ -105,7 +105,6 @@ loop:	while(!sq.isEmpty()) {
 				} // end of 4
 			} // end of for
 			
-			for(int i = 0; )
 			
 		} // end of while
 		if(!isGoOut) {
