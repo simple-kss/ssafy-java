@@ -73,20 +73,26 @@ public class Main2634_사냥꾼_정올_김성식 {
 			}
 			
 			
-			int len = saArr.length;
-			int first = 0;
-			int end = saArr.length - 1;
-			int middle = (len-1) / 2;
+			int len = saArr.length; 		// 사수대의 길이
+			
+			int first = 0;					// 사수대배열 첫번째 번지
+			int end = saArr.length;		// 사수대배열 마지막 번지
+			
 			while(true) {
-				
+				int middle = (first + end) / 2;		// 중간 번지
+				// 다 하고나서 없다면 break;
+
 				// sa의 X번지를 찾는다.
 				
 				// 만약 중간이라면 continue
 				// 중간이거나 범위안에 들어간다면 continue 사살
 				if(getDis(saArr[middle], aniX, aniY) <= range) {
 					count++;
-					break; // 범위에 들어갔으면 break;
+					break; // 범위에 들어갔으면 break, 다음 사수번지 찾는다.
 				}
+				if(first == middle || middle == end)
+					break;
+				
 				//그 번지가 크다면
 				// 동물이 더 작음
 				else if(saArr[middle] > aniX) {
@@ -97,11 +103,7 @@ public class Main2634_사냥꾼_정올_김성식 {
 					first = middle;
 				}
 				
-				// 다 하고나서
-				if(first == middle || end == middle)
-					break;
-				
-			}
+			} // end of while
 			
 			
 			
