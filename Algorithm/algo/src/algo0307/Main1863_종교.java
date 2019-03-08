@@ -19,8 +19,6 @@ public class Main1863_종교 {
 		
 		
 		
-		
-		
 
 	} // end of main
 } // end of class
