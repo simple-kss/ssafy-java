@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+	#back {
+		text-align: center;
+		width : 100%;
+		height : 100px;
+		background-color: rgb(192,192,192);	
+	}
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">맹구's Diet</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+	   <li><a href="#">공지 사항</a></li>
+	   <li><a href="#">상품 정보</a></li>
+	   <li><a href="#">베스트 섭취 정보</a></li>
+	   <li><a href="#">내 섭취 정보</a></li>
+	   <li><a href="#">예상 섭취 정보</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    <li><a href="./sign.jsp"><span class="glyphicon glyphicon-user"></span> Join </a></li>
+      <li><a href="./update.jsp"><span class="glyphicon glyphicon-user"></span> Info </a></li>
+      
+         
+	  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+	   <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	   </button>
+	  <ul class="dropdown-menu">
+		<li style="width:200px; height: 100px">
+			<form>
+				<div class="input-group">
+					<span class="input-group-addon"><i
+						class="glyphicon glyphicon-user"></i></span> <input id="email"
+						type="text" class="form-control" name="email"
+						placeholder="Email">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphiconglyphicon-lock"></i>
+					</span> <input id="password"
+						type="password" class="form-control" name="password"
+						placeholder="Password">
+				</div>
+				<button class="btn btn-primary" type="submit">login</button>
+			</form>
+		</li>
+	  </ul>
+		
+      
+    </ul>
+  </div>
+</nav>
+<div id="back"></div>
+
+</body>
+</html>
