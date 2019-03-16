@@ -1,53 +1,68 @@
 package baekjoon;
 
-import java.io.BufferedWriter;
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.nio.Buffer;
+import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Main15651 {
-	static BufferedWriter bf = new BufferedWriter(new OutputStreamWriter(System.out));
-	static int[] real;
-	static boolean[] check;
+	static StringBuilder sb = new StringBuilder();
 	
-	static void k(int n, int[] arr, int end) throws IOException {
-		int len = arr.length;
-		if( n >= end) {
-			for(int i = 0; i < n; i++)
-				bf.append(real[ arr[i] ]+" ");
-			bf.append("\n");
+	public static void makePer(int N ,int[] num, int[] per, int sN, int step, boolean[] visited) {
+		
+		if(step == sN) {
+			for(int i = 0; i < sN; i++) {
+				sb.append(per[i]).append(' ');
+			}
+			sb.append('\n');
+			
 		}
 		else {
-			// »ç¿ëÇÏÁö ¾ÊÀº ¼ýÀÚµé¸¸ Ã¤¿ì°í Àç±ÍÈ£Ãâ
-			for (int i = 0; i < len; i++) {
-				arr[n] = i;
-				k(n+1, arr, end);
-			}				
-		}
-	}
+			for(int i = 0; i < N; i++) {
+				per[step] = num[i];
+				makePer(N, num, per, sN, step + 1, visited);
 
-	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
-
-		
-		
-		
-		
-		Scanner scan = new Scanner(System.in);
-		int N = scan.nextInt(); // 1~N±îÁö
-		int M = scan.nextInt(); // M°³ÀÇ ¼ö¿­
-		
-		//arr = new int[M];
-		real = new int[N];
-		check =  new boolean[N];
-		for (int i = 0; i < N; i++) {
-			real[i] = i+1;			
+				
+			}
 		}
-		//System.out.println(Arrays.toString(real));
-		k(0, new int[N], M);
-		bf.close();
-	}
+		
+	} // end of func
 	
-}
+	public static void main(String[] args) throws IOException {
+		// ìž¬ê·€ë¡œ ì§œìž.
+		// DFSë¡œ!
+		// visitedë„ ë§Œë“¤ê³ 
+		
+		// String ë§Œë“¤ì–´ì„œ
+		// ê·¸ê±¸ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬
+		
+//		4 2
+		
+//		1 2
+//		1 3
+//		1 4
+//		2 3
+//		2 4
+//		3 4
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer stk = new StringTokenizer(br.readLine(), " ");
+		int N = Integer.parseInt(stk.nextToken());
+		int sN = Integer.parseInt(stk.nextToken());
+		
+		int[] num = new int[N];
+		for(int i = 0; i < N; i++) {
+			num[i] = i + 1;
+		}
+		
+		int[] per = new int[sN];
+		
+		makePer(N, num, per, sN, 0, new boolean[N]);
+		
+		System.out.println(sb);
+
+	} // end of main
+	
+	
+} // end of class
