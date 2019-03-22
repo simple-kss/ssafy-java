@@ -3,7 +3,7 @@ package baekjoon;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main15654 {
+public class Main15654_Nê³¼M5 {
 	
 	static int n;
 	static int[] arr;
@@ -21,8 +21,8 @@ public class Main15654 {
 			for(int i = 0; i < n; i++) {
 				
 				if(visited[i]==true) continue;
-				// ±× Àü¿¡ °Íµé true ¿Ö³Ä¸é
-				// °ªÀÌ ´õ ÀÛÀ»°Ô ºÐ¸íÇÏ¹Ç·Î
+				// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Íµï¿½ true ï¿½Ö³Ä¸ï¿½
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¸ï¿½ï¿½Ï¹Ç·ï¿½
 				for(int j = 0; j < i; j++) {
 					if(arr[i] > arr[j])
 					visited[j] = true;

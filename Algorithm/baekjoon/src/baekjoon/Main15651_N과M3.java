@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main15651 {
+public class Main15651_N과M3 {
 	static StringBuilder sb = new StringBuilder();
 	
 	public static void makePer(int N ,int[] num, int[] per, int sN, int step, boolean[] visited) {

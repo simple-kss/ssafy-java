@@ -13,7 +13,7 @@ import java.util.Scanner;
 9 7 9 1
  */
 
-public class Main15657 {
+public class Main15657_N과M8 {
 
 	static int n;
 	static int[] arr;

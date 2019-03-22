@@ -32,7 +32,7 @@ class Point {
 	
 }
 
-public class Main2606_토마토초 {
+public class 정올_2606_토마토초_김성식 {
 	static int dir[][] = {
 			// 6방향
 			{-1, 0, 0}, // 상

@@ -9,8 +9,8 @@ public class Solution_5431{
 		int T = scan.nextInt();
 		
 		for(int t = 1; t <= T; t++) {
-			int N = scan.nextInt(); // �л� ��
-			int K = scan.nextInt(); // ������ ������ ��� ��
+			int N = scan.nextInt(); // 
+			int K = scan.nextInt(); // 
 			
 			int[] stu = new int[N+1];
 			

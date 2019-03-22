@@ -18,7 +18,7 @@ class Point {
 	
 }
 
-public class Main1462_보물섬_김성식 {
+public class 정올_1462_보물섬_김성식 {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		

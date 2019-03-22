@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Solution_1493_수의새로운연산 {
+public class Solution_1493_수의새로운연산_김성식 {
 	public static void main(String[] args) throws IOException {
 		System.out.println(" ");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.StringTokenizer;
 
-public class Solution_3752_가능한시험점수 {
+public class Solution_3752_가능한시험점수_김성식 {
 	
 	static int[] arr;
 	static int[] print;

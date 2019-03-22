@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 import javax.net.ssl.SSLContext;
 
-public class Main14939 {
+public class Main14939_불끄기 {
 	static int[][] dir = {
 		{ 0, 1},
 		{ 1, 0},
@@ -62,10 +62,7 @@ public class Main14939 {
 		
 		if(maxCnt < cnt) maxCnt = cnt;
 		
-		
 		System.out.println("123");
-		
-		
 		
 		
 

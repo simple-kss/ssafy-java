@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 
-public class Main15652 {
+public class Main15652_N과M4 {
 	
 	static int[] print; // 저장할 애
 	

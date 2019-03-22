@@ -2,7 +2,7 @@ package algo0314;
 
 import java.util.Scanner;
 
-public class Main_1053_피보나치_김성식 {
+public class 정올_1053_피보나치_김성식 {
 	// 행렬을 만들자
 	static int[][] mat = {
 		{1, 1},

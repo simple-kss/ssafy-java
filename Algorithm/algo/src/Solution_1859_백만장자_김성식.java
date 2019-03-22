@@ -19,7 +19,7 @@ import java.util.StringTokenizer;
  *
  */
 
-public class Solution_1859_백만장자 {
+public class Solution_1859_백만장자_김성식 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

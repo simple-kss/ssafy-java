@@ -33,7 +33,7 @@ class Point implements Comparable<Point>{
 
 
 
-public class Main2634_사냥꾼_정올_김성식 {
+public class 정올_2634_사냥꾼_김성식 {
 	
 	public static void main(String[] args) throws IOException {
 		// 사대의 수, 동물의 수, 사정거리

@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main15655_N과M {
+public class Main15655_N과M6 {
 	static int[] print;
 	static int[] arr;
 	static StringBuilder sb = new StringBuilder();

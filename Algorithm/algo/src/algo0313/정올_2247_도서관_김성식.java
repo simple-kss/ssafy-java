@@ -29,7 +29,7 @@ class Number implements Comparable<Number>{
 	}
 }
 
-public class Main2247_도서관_김성식 {
+public class 정올_2247_도서관_김성식 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

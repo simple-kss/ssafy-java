@@ -47,7 +47,7 @@ class Poin implements Comparable<Poin>{
 	
 }
 
-public class Solution_1258_SW문제해결응용7일차_행렬찾기 {
+public class Solution_1258_SW문제해결응용7일차_행렬찾기_김성식 {
 	static char[][] map;
 	static boolean[][] visited;
 	static int N;

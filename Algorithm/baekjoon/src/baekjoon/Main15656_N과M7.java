@@ -1,67 +1,88 @@
 package baekjoon;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
-
-// 사전 순으로 증가
-
-public class Main15656 {
-
-	static int n;
+public class Main15656_N과M7 {
+	static int N; // N개
+	static int sN; // N개중 sN개 선택
 	static int[] arr;
 	static int[] print;
-	static boolean[] visited;
 	static StringBuilder sb = new StringBuilder();
 	
-	public static void per(int start, int end) {
-		if(start >= end) {
-			for (int i : print) {
-				sb.append(i).append(" ");
-			}
-			sb.append("\n");
-		}
-		else {
-			for(int i = 0; i < n; i++) {
-				
-//				if(visited[i]==true) continue;
-//				
-//				for(int j = 0; j < i; j++) {
-//					if(arr[i] > arr[j])
-//					visited[j] = true;
-//				}
-//				visited[i] = true;
-				
-				print[start] = arr[i];
-				per(start+1, end);
-				
-//				visited[i] = false;
-//				for(int j = 0; j < i; j++)
-//					visited[j] = false;
-			}
-		}
+	
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-	}
-
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		n = scan.nextInt();
-		int cnt = scan.nextInt();
+		StringTokenizer stk = new StringTokenizer(br.readLine(), " ");
+		N = Integer.parseInt(stk.nextToken());
+		sN = Integer.parseInt(stk.nextToken());
 		
-		arr = new int[n];
-		visited = new boolean[n];
+		arr = new int[N];
+		print = new int[sN];
 		
-		for(int i = 0; i < n; i++) {
-			arr[i] = scan.nextInt();
+		stk = new StringTokenizer(br.readLine(), " ");
+		for(int i = 0; i < N; i++) {
+			arr[i] = Integer.parseInt(stk.nextToken());
 		}
 		
 		Arrays.sort(arr);
-		print = new int[cnt];
 		
 		
-		per(0, cnt);
+		// 현재스텝, 끝낼스탭
+		perm(0, sN);
+		
+		
+//		for(int i = 0; i < N; i++) {
+//			System.out.println(arr[i]);
+//		}
+	
 		System.out.println(sb);
 		
+		
 
+	} // end of main
+
+
+
+	private static void perm(int step, int end) {
+		if(step == end) {
+			for(int i = 0; i < sN; i++) {
+				sb.append(print[i]).append(' ');
+			}
+			sb.append('\n');
+		}
+		else {
+			for(int i = 0; i < N; i++) {
+				print[step] = arr[i];
+				perm(step+1, end);
+			}
+		}
+		
 	}
-}
+} // end of class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
