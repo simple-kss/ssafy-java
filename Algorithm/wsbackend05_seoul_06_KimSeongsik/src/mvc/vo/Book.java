@@ -1,4 +1,4 @@
-package com.basic;
+package mvc.vo;
 
 public class Book {
 	private String isbn;

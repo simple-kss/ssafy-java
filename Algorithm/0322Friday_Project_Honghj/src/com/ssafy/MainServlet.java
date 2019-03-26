@@ -1,4 +1,4 @@
-package com.basic;
+package com.ssafy;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.basic;
+package com.ssafy;
 
 import java.util.ArrayList;
 import java.util.List;
