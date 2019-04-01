@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#subm').click(function () {
+			if($("#id").val()==""){
+				alert("id입력해주세요");
+			}
+			else if($("#pw").val()==""){
+				alert("pw입력해주세요");
+			}
+			else {
+				$("#loginform").submit();
+			}
+		})
+	})
+</script>
+
+</head>
+<body>
+<form method="post" id="loginform" action="/wsbackend01_seoul_06_KimSeongsik/MainServlet">
+Id : <input type="id" name="id" id="id">
+Password : <input type="password" name="password" id="pw">
+<button id="subm">Submit</button>
+
+</form>
+
+</body>
+</html>
