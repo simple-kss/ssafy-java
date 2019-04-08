@@ -1,0 +1,40 @@
+@charset "UTF-8";
+body {
+	padding-top: 170px;
+	padding-bottom: 70px;
+}
+
+.navbar-header {
+	height: 100px;
+}
+
+.container ul li a {
+	margin-top: 25px;
+	font-size: 15px;
+	font-family: bold;
+}
+
+.container form {
+	margin-top: 33px;
+	font-size: 15px;
+	font-family: bold;
+}
+.container .dropdown { 
+	margin-top: 33px; 
+	font-size: 15px; 
+	font-family: bold; 
+} 
+
+.navbar-myinfo label{
+	float: right;
+	margin-top: 15px;
+	font-size: 15px;
+	font-family: bold;
+	padding-right: 10px;
+}
+.banner{
+	background-color: rgba(201, 201, 201, .5);
+	padding: 10px;
+	border-radius: 10px;
+	height: 200px;
+}
