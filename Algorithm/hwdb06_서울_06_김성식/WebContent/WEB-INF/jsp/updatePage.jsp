@@ -9,11 +9,9 @@
 </head>
 <body>
     <h1>업데이트</h1>
-    <form action="updateBook.do" method="post">
-    <input style="display:none;" type="text" name="bookid" value="${bookid }">
-        제목 : <input type="text" name="title" value="${title }">  <br>
-        출판사 : <input type="text" name="publisher" value="${publisher }">  <br>
-        년도 : <input type="text" name="year" value="${year }">  <br>
+    <form action="updateProduct.do" method="post">
+    <input style="display:none;" type="text" name="isbn" value="${isbn }">
+        이름 : <input type="text" name="name" value="${name }">  <br>
         가격 : <input type="text" name="price" value="${price }">  <br>
         <button type="submit">수정하기</button>
     </form>

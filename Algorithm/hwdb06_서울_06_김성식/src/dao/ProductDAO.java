@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import vo.ProductVO;
+import vo.ProductVO;
 
 public class ProductDAO {
 	// ProductDAO을 SingleTon패턴으로 사용해보자.
@@ -42,6 +43,7 @@ public class ProductDAO {
 		String sql = "INSERT INTO Product VALUES (?,?,?)";
 		PreparedStatement pstmt = null;
 		try {
+			System.out.println(sql);
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1,  Product.getIsbn());
 			pstmt.setString(2,  Product.getName());
@@ -76,6 +78,7 @@ public class ProductDAO {
 		PreparedStatement pstmt = null;
 		
 		try {
+			System.out.println(Product.toString());
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1,  Product.getName());
 			pstmt.setInt(2,  Product.getPrice());
@@ -108,6 +111,7 @@ public class ProductDAO {
 		PreparedStatement pstmt = null;
 		
 		try {
+			System.out.println(isbn);
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1,  isbn);
 			
@@ -206,6 +210,45 @@ public class ProductDAO {
 		return null;
 		
 		
+	}
+
+	public List<ProductVO> selectName(String name) {
+		List<ProductVO> list = new ArrayList<>();
+		
+		String sql = "SELECT * FROM product WHERE name LIKE ?";
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			name = "%"+name+"%";
+			pstmt.setString(1, name);
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				ProductVO Product = new ProductVO();
+				Product.setIsbn(rs.getString(1));
+				Product.setName(rs.getString(2)); // rs.getString(2) 해도 됨
+				Product.setPrice(rs.getInt(3));
+				list.add(Product);
+			}
+			return list; // Select 시
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(rs != null) {
+					rs.close();
+				}
+				if(pstmt != null) {
+					pstmt.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
 	}
 	
 	

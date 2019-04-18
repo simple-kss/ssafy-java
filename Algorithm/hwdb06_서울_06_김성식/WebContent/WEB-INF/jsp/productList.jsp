@@ -18,8 +18,7 @@
 <h1><a href="productList.do"> 홈페이지 </a></h1>	
 	<form action="selectBook.do" method="get">
 		<select name="opt">
-			<option value="title">제목</option>
-			<option value="publisher">출판사</option>
+			<option value="name">이름</option>
 		</select>
 		<input type="text" name="content">
 		<button type="submit"> 검색 </button>
@@ -27,27 +26,21 @@
 	<br>
 	
 	
-	jstl을 활용해서 반복구조 쉽게 표현하자
+	<h1>제품정보</h1>
 	<tr>
-		<th width="80">책 번호</th>
-		<th width="80">책 제목</th>
-		<th width="80">출판사</th>
-		<th width="80">년도</th>
+		<th width="80">제품 번호</th>
+		<th width="80">이름 </th>
 		<th width="80">가격(원)</th>
 	</tr>
 	
-	<c:forEach var="book" items="${blist }">
+	<c:forEach var="product" items="${list }">
 		<tr>
-			 <td>${book.bookid}</td>
-             <td>${book.title}</td>
-             <td>${book.publisher}</td>
-             <td>${book.year}</td>
-             <td>${book.price}</td>
-             <td><a href="deleteBook.do?bookid=${book.bookid}">도서삭제</a></td>
-             <td><a href="updatePage.do?bookid=${book.bookid}">수정하기</a></td>
+			 <td>${product.isbn}</td>
+             <td>${product.name}</td>
+             <td>${product.price}</td>
+             <td><a href="deleteProduct.do?isbn=${product.isbn}">제품삭제</a></td>
+             <td><a href="updatePage.do?isbn=${product.isbn}">수정하기</a></td>
 		</tr>
-	
-	
 	</c:forEach>
 </table>
 
@@ -60,7 +53,7 @@ addBook.do 돌아와서 서블릿에서 DB에 데이터를 INSERT
  -->
  
  	<tr>
- 		<td colspan="5" align="right"><a href="addBook.do">도서추가</a></td>
+ 		<td colspan="5" align="right"><a href="addPage.do">제품추가</a></td>
  	</tr>
 
 

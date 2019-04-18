@@ -38,12 +38,32 @@ public class ProductFilter implements Filter {
 		if(reqString.equals("/productList.do")) {
 			controller.productList(req, res);
 		}
-		else if(reqString.equals("/delete.mvc")) {
+		else if(reqString.equals("/addProduct.do")) {
+			controller.addProduct(req, res);
 		}
+		else if(reqString.equals("/addPage.do")) {
+			controller.addPage(req, res);
+		}
+		else if(reqString.equals("/deleteProduct.do")) {
+			controller.deleteProduct(req, res);
+		}
+		else if(reqString.equals("/updatePage.do")) {
+			controller.updatePage(req, res);
+		}
+		else if(reqString.equals("/updateProduct.do")) {
+			controller.updateProduct(req, res);
+		}
+		else if(reqString.equals("/selectBook.do")) {
+			controller.selectProduct(req, res);
+		}
+		
+		
+
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
 		controller = new ProductController();
+		System.out.println("123");
 	}
 
 }
