@@ -14,7 +14,7 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['영양성분', 'Percent per Day'],
+          ['영양성분', 'Percent per Day'],"C:/Users/student/Desktop/일타사피/Sample Code/Sample_Code.java"
           ['탄수화물',     11],
           ['지방',      2],
           ['단백질',  2],
